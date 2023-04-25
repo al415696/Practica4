@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5c23e10-1348-4f39-876b-3c36b2adde65" name="Changes" comment="" />
+    <list default="true" id="b5c23e10-1348-4f39-876b-3c36b2adde65" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Hello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,15 +38,29 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/al415696/IdeaProjects/Practica4"
+    "last_opened_file_path": "C:/Users/al415696/IdeaProjects/Practica4/src/main/java/es/uji/MVC/Vista"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\al415696\IdeaProjects\Practica4\src\main\java\es\uji\MVC\Vista" />
       <recent name="C:\Users\al415696\IdeaProjects\Practica4" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Hello">
+    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="es.uji.MVC.Vista.Hello" />
+      <module name="Practica4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.MVC.Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in Practica4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica4" />
       <option name="PACKAGE_NAME" value="" />
@@ -47,6 +71,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Hello" />
         <item itemvalue="JUnit.All in Practica4" />
       </list>
     </recent_temporary>
@@ -59,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682413007418</updated>
-      <workItem from="1682413008995" duration="998000" />
+      <workItem from="1682413008995" duration="1752000" />
     </task>
     <servers />
   </component>
