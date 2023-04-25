@@ -4,50 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5c23e10-1348-4f39-876b-3c36b2adde65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/files/iris.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/files/miles_dollars.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/files/songs_test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/files/songs_test_names.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/files/songs_test_withoutnames.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/files/songs_train.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/files/songs_train_names.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/files/songs_train_withoutnames.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Algorithm/Algorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/CSV/CSV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/CSV/CSVLabeledFileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/CSV/CSVUnlabeledFileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/CSV/ReaderTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Cluster/Cluster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Estrategia/Distance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Estrategia/DistanceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Estrategia/EuclideanDistance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Estrategia/ManhatanDistance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Exceptions/IncompatiblePositionFormatException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Exceptions/SongNotInDataBaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/KNN/KNN.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Kmeans/Kmeans.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Recomendacion/RecSys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Recomendacion/SongRecSys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Rows/Row.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Rows/RowWithLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Tables/Table.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/Tables/TableWithLabels.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/Estrategia/EuclideanDistanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/Estrategia/ManhatanDistanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/Kmeans/KmeansTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/Recomendacion/RecSysTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/Row/RowTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/Row/RowWithLabelsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/Table/TableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/Template/CSVLabeledFileReaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/Template/CSVUnlabeledFileReaderTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="b5c23e10-1348-4f39-876b-3c36b2adde65" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +26,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/al415696/IdeaProjects/Practica4"
   }
@@ -101,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682413007418</updated>
-      <workItem from="1682413008995" duration="662000" />
+      <workItem from="1682413008995" duration="998000" />
     </task>
     <servers />
   </component>
