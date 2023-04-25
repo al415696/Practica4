@@ -49,6 +49,7 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>src/main/java/es/uji/MVC/Vista/Hello.java</mainClass>
+                    <executable>C:\Users\al415696\.jdks\corretto-19.0.2\bin\java.exe</executable>
                 </configuration>
             </plugin>
         </plugins>
