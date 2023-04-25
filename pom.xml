@@ -48,7 +48,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>Hello</mainClass>
+                    <mainClass>src/main/java/es/uji/MVC/Vista/Hello.java</mainClass>
                 </configuration>
             </plugin>
         </plugins>
