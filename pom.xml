@@ -49,6 +49,7 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>src/main/java/es/uji/MVC/Vista/Hello.java</mainClass>
+                    <executable>C:\Users\Isabel\.jdks\openjdk-19.0.1\bin\java.exe</executable>
                 </configuration>
             </plugin>
         </plugins>
