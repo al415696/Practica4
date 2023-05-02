@@ -22,9 +22,15 @@ public class Initializer extends Application  {
         Controlador controlador = new Controlador();
         Modelo modelo = new Modelo();
         Vista vista = new Vista(stage);
+
         modelo.setVista(vista);
+        modelo.initializeSongNames("src/files/songs_test_names.csv");
+        modelo.initializeDataTable("src/files/songs_test_withoutnames.csv");
+        modelo.initializeTrainTable("src/files/songs_train_withoutnames.csv");
+
         controlador.setVista(vista);
         controlador.setModelo(modelo);
+
         vista.setModelo(modelo);
         vista.setControlador(controlador);
         vista.creaGUI();

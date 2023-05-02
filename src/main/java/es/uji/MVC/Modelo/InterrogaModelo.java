@@ -5,10 +5,11 @@ import es.uji.Exceptions.SongNotInDataBaseException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public interface InterrogaModelo {
     void train() throws FileNotFoundException;
     ArrayList<String> getListaCanciones() throws FileNotFoundException;
-    ArrayList<String> getListaRecomendaciones(String nameLikedItem, int numRecommendations, String estrategia, String algoritmo) throws IOException, SongNotInDataBaseException;
+    List getListaRecomendaciones(String nameLikedItem, int numRecommendations) throws SongNotInDataBaseException;
 
 }
