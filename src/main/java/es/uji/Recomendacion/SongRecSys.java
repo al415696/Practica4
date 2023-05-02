@@ -2,10 +2,9 @@ package es.uji.Recomendacion;
 
 import es.uji.Algorithm.Algorithm;
 import es.uji.CSV.CSV;
-import es.uji.Estrategia.EuclideanDistance;
 import es.uji.Estrategia.ManhatanDistance;
-import es.uji.KNN.KNN;
-import es.uji.Kmeans.Kmeans;
+import es.uji.Algorithm.KNN.KNN;
+import es.uji.Algorithm.Kmeans.Kmeans;
 import es.uji.Tables.Table;
 
 import java.io.BufferedReader;

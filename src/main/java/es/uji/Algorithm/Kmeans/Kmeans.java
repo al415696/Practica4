@@ -1,4 +1,4 @@
-package es.uji.Kmeans;
+package es.uji.Algorithm.Kmeans;
 
 import es.uji.Algorithm.Algorithm;
 import es.uji.Cluster.Cluster;

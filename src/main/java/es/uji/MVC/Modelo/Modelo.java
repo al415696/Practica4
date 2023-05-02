@@ -7,15 +7,14 @@ import es.uji.Estrategia.DistanceClient;
 import es.uji.Estrategia.EuclideanDistance;
 import es.uji.Estrategia.ManhatanDistance;
 import es.uji.Exceptions.SongNotInDataBaseException;
-import es.uji.KNN.KNN;
-import es.uji.Kmeans.Kmeans;
+import es.uji.Algorithm.KNN.KNN;
+import es.uji.Algorithm.Kmeans.Kmeans;
 import es.uji.MVC.Vista.InformaVista;
 import es.uji.Recomendacion.RecSys;
 import es.uji.Tables.Table;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.*;
 
 public class Modelo implements InterrogaModelo,CambioModelo {
@@ -83,5 +82,8 @@ public class Modelo implements InterrogaModelo,CambioModelo {
     @Override
     public void cambiaAManhatan() {
         distance = new ManhatanDistance();
+    }
+
+    private interface fullAlgorithm extends Algorithm, DistanceClient{
     }
 }

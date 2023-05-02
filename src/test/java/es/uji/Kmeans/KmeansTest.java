@@ -1,5 +1,6 @@
 package es.uji.Kmeans;
 
+import es.uji.Algorithm.Kmeans.Kmeans;
 import es.uji.CSV.CSV;
 import es.uji.Estrategia.ManhatanDistance;
 import es.uji.Tables.Table;

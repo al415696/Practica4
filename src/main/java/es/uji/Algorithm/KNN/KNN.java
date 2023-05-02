@@ -1,4 +1,4 @@
-package es.uji.KNN;
+package es.uji.Algorithm.KNN;
 
 import es.uji.Algorithm.Algorithm;
 import es.uji.Estrategia.Distance;
