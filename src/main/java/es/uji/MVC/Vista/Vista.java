@@ -1,10 +1,12 @@
 package es.uji.MVC.Vista;
 
+import es.uji.MVC.Controlador.Controlador;
 import es.uji.MVC.Controlador.Controller;
 import es.uji.MVC.Modelo.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -12,6 +14,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+import java.io.FileNotFoundException;
 
 public class Vista implements InterrogaVista,InformaVista {
     private final Stage mainStage;
@@ -33,7 +37,7 @@ public class Vista implements InterrogaVista,InformaVista {
         this.controlador = controlador;
     }
 
-        public void creaGUI(){
+        public void creaGUI() throws FileNotFoundException {
         mainStage.setTitle("Song Recommender");
         StackPane root = new StackPane();
 
@@ -44,7 +48,7 @@ public class Vista implements InterrogaVista,InformaVista {
         //num recomendaciones
         Label numRecomendLabel = new Label("Number of recomendations");
         numRecomendLabel.setFont(Font.font(13));
-        Spinner<Double> numRecomendSpinner = new Spinner<>();
+        Spinner<Double> numRecomendSpinner = new Spinner<>(1,50,1);
         HBox hboxNumRecomend = new HBox(numRecomendLabel,numRecomendSpinner);
         hboxNumRecomend.setSpacing(10);
         hboxNumRecomend.setAlignment(Pos.CENTER_LEFT);
@@ -75,18 +79,17 @@ public class Vista implements InterrogaVista,InformaVista {
         Label songsLabel = new Label("Song Titles");
         songsLabel.setFont(Font.font(17));
             //Song list
-        ObservableList<String> songListNames = FXCollections.observableArrayList("Rightfully", "Peer Gynt", "Crazy My Beat", "Diggy Hole", "Bad Apple", "Star Platinum" +
-                "Armor-clad Faith", "Nights Of Fire", "Deja Vu", "Rumbling", "The Day", "Flowering Night");
-        ListView songList = new ListView<>(songListNames);
+            ObservableList<String> songList = FXCollections.observableArrayList(modelo.getListaCanciones());
+            ListView<String> lista = new ListView<>(songList);
         //General
         Label uno = new Label("Uno");
         Label dos = new Label("Dos");
         Label tres = new Label("Tres");
         Label cuatro = new Label("Cuatro");
-        VBox vBox = new VBox(optionsLabel,hboxNumRecomend,hboxOptions,songsLabel,songList,uno, dos, tres, cuatro);
-        vBox.setSpacing(10);
-        vBox.setAlignment(Pos.TOP_LEFT);
-        root.getChildren().add(vBox);
+
+        VBox vBox = new VBox(optionsLabel,hboxNumRecomend,hboxOptions,songsLabel,lista,uno, dos, tres, cuatro);
+
+        vBox.setSpacing(10); vBox.setAlignment(Pos.TOP_LEFT); root.getChildren().add(vBox);
         mainStage.setScene(new Scene(root, 400, 500));
         mainStage.show();
 

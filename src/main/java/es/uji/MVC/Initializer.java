@@ -7,6 +7,8 @@ import es.uji.MVC.Vista.Vista;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
+
 public class Initializer extends Application  {
     InterrogaModelo model;
 
@@ -16,7 +18,7 @@ public class Initializer extends Application  {
     }
 
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws FileNotFoundException {
         Controlador controlador = new Controlador();
         Modelo modelo = new Modelo();
         Vista vista = new Vista(stage);
