@@ -1,6 +1,7 @@
 package es.uji.MVC.Modelo;
 
 import es.uji.MVC.Vista.InformaVista;
+import javafx.scene.control.ListView;
 
 import java.util.ArrayList;
 
@@ -30,6 +31,11 @@ public class ImplementacionModelo implements CambioModelo, InterrogaModelo{
     }
 
     @Override
+    public ListView<String> getListaActual() {
+        return null;
+    }
+
+    @Override
     public int getNumeroEntradas() {
         return 0;
     }
@@ -43,4 +49,5 @@ public class ImplementacionModelo implements CambioModelo, InterrogaModelo{
     public int getPoscionEntradaActual() {
         return 0;
     }
+
 }

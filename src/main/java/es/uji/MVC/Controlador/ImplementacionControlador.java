@@ -72,19 +72,19 @@ public class ImplementacionControlador implements Controlador{
     public void setModelo(CambioModelo modelo) {
         this.modelo = modelo;
     }
-    @Override
-    public void anyadeEntrada() {
-
-    }
 
     @Override
-    public void adelante() {
+    public void recomendarCanciones() {
+        /*{
+            try {
+                String nameLikedItem = modelo.getListaActual().getSelectionModel().getSelectedItem();
+                int numRecommendations = numRecomendSpinner.getValueFactory().getValue();
+                cancionesRecomendadas.setAll(ImplementacionControlador.getListaRecomendaciones(nameLikedItem, numRecommendations, estrategia.get(), algoritmo.get()));
 
-    }
-
-    @Override
-    public void atras() {
-
+            } catch (SongNotInDataBaseException | IOException e) {
+                throw new RuntimeException(e);
+            }
+        }*/
     }
 }
 

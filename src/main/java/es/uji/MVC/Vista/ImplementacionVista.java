@@ -66,12 +66,18 @@ public class ImplementacionVista implements InterrogaVista, InformaVista{
         ObservableList<String> canciones = FXCollections.observableArrayList(ImplementacionControlador.getListaCanciones());
         ListView<String> lista = new ListView<>(canciones);
         Label numRecomemnds = new Label("Number of Recommendations: ");
-        Spinner<Integer> numRecomendSpinner = new Spinner<>(0,50,0);
-
-        Label ifYouLike = new Label();
-
-        lista.setOnMouseClicked(value -> ifYouLike.setText("If you liked \""+ lista.getSelectionModel().getSelectedItem() + "\" you might like"));
+        Spinner<Integer> numRecomendSpinner = new Spinner<>(1,50,1);
         Button botonRecomend = new Button("Recomendar");
+        botonRecomend.setDisable(true);
+        Label ifYouLike = new Label();
+        if(!botonRecomend.isDisabled()){
+            botonRecomend.setTooltip(new Tooltip("Selecciona un canción"));
+        }
+        lista.setOnMouseClicked(value -> {
+            ifYouLike.setText("If you liked \""+ lista.getSelectionModel().getSelectedItem() + "\" you might like");
+            botonRecomend.setDisable(false);
+        });
+
         HBox hBoxSpinnerBoton = new HBox(numRecomendSpinner,botonRecomend);
 
         ListView<String> listaRecomendaciones = new ListView<>();
