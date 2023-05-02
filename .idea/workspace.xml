@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5c23e10-1348-4f39-876b-3c36b2adde65" name="Changes" comment="">
+    <list default="true" id="33184798-37a5-4367-80b5-af30ce2513e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Controlador/ImplementacionControlador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/CambioModelo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/ImplementacionModelo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/InterrogaModelo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/ImplementacionVista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/InformaVista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/InterrogaVista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Controlador/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Hello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Controlador/prueba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Hello.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +30,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -52,12 +70,12 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.RecSysTest.recommendExactly10">
-    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="es.uji.MVC.Vista.Hello" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="es.uji.MVC.Main.Main" />
       <module name="Practica4" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.MVC.Vista.*" />
+          <option name="PATTERN" value="es.uji.MVC.Main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,7 +140,7 @@
         <item itemvalue="JUnit.RecSysTest.recommendExactly10" />
         <item itemvalue="JUnit.RecSysTest" />
         <item itemvalue="Application.SongRecSys" />
-        <item itemvalue="Application.Hello" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in Practica4" />
       </list>
     </recent_temporary>
