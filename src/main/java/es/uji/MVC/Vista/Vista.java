@@ -1,6 +1,7 @@
 package es.uji.MVC.Vista;
 
-import javafx.application.Application;
+import es.uji.MVC.Controlador.Controller;
+import es.uji.MVC.Modelo.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -12,15 +13,28 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-public class Hello extends Application {
+public class Vista implements InterrogaVista,InformaVista {
+    private final Stage mainStage;
+    private Controller controlador;
+    InterrogaModelo modelo;
+
 
     public static void main(String[] args) {
-        launch(args);
+        System.out.println("Prueba");
+    }
+    public void setModelo(final InterrogaModelo modelo) {
+        this.modelo = modelo;
+    }
+    public Vista(final Stage stage) {
+        this.mainStage = stage;
     }
 
-    @Override
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("Song Recommender");
+    public void setControlador(final Controller controlador) {
+        this.controlador = controlador;
+    }
+
+        public void creaGUI(){
+        mainStage.setTitle("Song Recommender");
         StackPane root = new StackPane();
 
         //Options
@@ -73,8 +87,8 @@ public class Hello extends Application {
         vBox.setSpacing(10);
         vBox.setAlignment(Pos.TOP_LEFT);
         root.getChildren().add(vBox);
-        primaryStage.setScene(new Scene(root, 400, 500));
-        primaryStage.show();
+        mainStage.setScene(new Scene(root, 400, 500));
+        mainStage.show();
 
 
         //https://www.youtube.com/watch?v=VUVqamT8Npc

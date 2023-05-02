@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5c23e10-1348-4f39-876b-3c36b2adde65" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Controlador/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Initializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/CambioModelo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/InterrogaModelo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/Modelo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/InformaVista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/InterrogaVista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Hello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Controlador/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Hello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Vista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -45,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/al415696/IdeaProjects/Practica4/src/main/java/es/uji/MVC/Vista",
+    "last_opened_file_path": "C:/Users/al415696/IdeaProjects/Practica4",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -58,9 +67,22 @@
       <recent name="C:\Users\al415696\IdeaProjects\Practica4" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Hello">
-    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="es.uji.MVC.Vista.Hello" />
+  <component name="RunManager" selected="Application.Initializer">
+    <configuration name="Initializer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="es.uji.MVC.Initializer" />
+      <module name="Practica4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.MVC.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Vista" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="es.uji.MVC.Vista.Vista" />
       <module name="Practica4" />
       <extension name="coverage">
         <pattern>
@@ -82,7 +104,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Hello" />
+        <item itemvalue="Application.Initializer" />
+        <item itemvalue="Application.Vista" />
         <item itemvalue="JUnit.All in Practica4" />
       </list>
     </recent_temporary>
@@ -95,7 +118,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682413007418</updated>
-      <workItem from="1682413008995" duration="5703000" />
+      <workItem from="1682413008995" duration="5784000" />
+      <workItem from="1683016863591" duration="3069000" />
     </task>
     <servers />
   </component>
