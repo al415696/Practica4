@@ -2,7 +2,7 @@ package es.uji.Recomendacion;
 
 import es.uji.Algorithm.Algorithm;
 import es.uji.CSV.CSV;
-import es.uji.Estrategia.ManhatanDistance;
+import es.uji.Estrategia.ManhattanDistance;
 import es.uji.Algorithm.KNN.KNN;
 import es.uji.Algorithm.Kmeans.Kmeans;
 import es.uji.Tables.Table;
@@ -31,8 +31,8 @@ class SongRecSys {
 
         // Algorithms
         Map<String, Algorithm> algorithms = new HashMap<>();
-        algorithms.put("knn", new KNN(new ManhatanDistance()));
-        algorithms.put("kmeans", new Kmeans(15, 200, 4321, new ManhatanDistance()));
+        algorithms.put("knn", new KNN(new ManhattanDistance()));
+        algorithms.put("kmeans", new Kmeans(15, 200, 4321, new ManhattanDistance()));
 
         // Tables
         Map<String, Table> tables = new HashMap<>();

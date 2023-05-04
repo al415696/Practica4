@@ -4,7 +4,7 @@ package es.uji.MVC.Controlador;
 import es.uji.Algorithm.Algorithm;
 import es.uji.CSV.CSV;
 import es.uji.Estrategia.EuclideanDistance;
-import es.uji.Estrategia.ManhatanDistance;
+import es.uji.Estrategia.ManhattanDistance;
 import es.uji.Exceptions.SongNotInDataBaseException;
 import es.uji.Algorithm.KNN.KNN;
 import es.uji.Algorithm.Kmeans.Kmeans;
@@ -50,8 +50,8 @@ public class Controlador implements Controller {
 
         Map<String, Algorithm> algorithms = new HashMap<>();
         if (Objects.equals(estrategia, "Manhattan")) {
-            algorithms.put("knn", new KNN(new ManhatanDistance()));
-            algorithms.put("kmeans", new Kmeans(15, 200, 4321, new ManhatanDistance()));
+            algorithms.put("knn", new KNN(new ManhattanDistance()));
+            algorithms.put("kmeans", new Kmeans(15, 200, 4321, new ManhattanDistance()));
         } else {
             algorithms.put("knn", new KNN(new EuclideanDistance()));
             algorithms.put("kmeans", new Kmeans(15, 200, 4321, new EuclideanDistance()));
@@ -72,5 +72,15 @@ public class Controlador implements Controller {
         recsys.train(tables.get(algoritmo + "train"));
         recsys.run(tables.get(algoritmo + "test"), names);
         return (ArrayList<String>) recsys.recommend(nameLikedItem, numRecommendations);
+    }
+
+    @Override
+    public void selectAlgorithm(int indice) {
+        modelo.selectAlgorithm(indice);
+    }
+
+    @Override
+    public void selectDistance(int indice) {
+        modelo.selectDistance(indice);
     }
 }

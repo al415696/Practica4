@@ -2,7 +2,6 @@ package es.uji.Estrategia;
 
 import es.uji.Exceptions.IncompatiblePositionFormatException;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ManhatanDistanceTest {
-    ManhatanDistance md = new ManhatanDistance();
+    ManhattanDistance md = new ManhattanDistance();
     List<Double> p = new ArrayList<>();
     List<Double> q = new ArrayList<>();
     @AfterEach

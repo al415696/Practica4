@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface InterrogaModelo {
-    void train() throws FileNotFoundException;
     ArrayList<String> getListaCanciones() throws FileNotFoundException;
     List getListaRecomendaciones(String nameLikedItem, int numRecommendations) throws SongNotInDataBaseException;
 

@@ -1,8 +1,6 @@
 package es.uji.MVC.Modelo;
 
 public interface CambioModelo {
-    void cambiaAKNN();
-    void cambiaAKMeans();
-    void cambiaAEucliedean();
-    void cambiaAManhatan();
+    void selectAlgorithm(int indice);
+    void selectDistance(int indice);
 }

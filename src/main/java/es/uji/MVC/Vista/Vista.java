@@ -22,6 +22,9 @@ public class Vista implements InterrogaVista,InformaVista {
     private Controller controlador;
     InterrogaModelo modelo;
 
+    private Spinner<Integer> numRecomendSpinner;
+    private ListView<String> lista;
+
 
     public static void main(String[] args) {
         System.out.println("Prueba");
@@ -48,7 +51,7 @@ public class Vista implements InterrogaVista,InformaVista {
         //num recomendaciones
         Label numRecomendLabel = new Label("Number of recomendations");
         numRecomendLabel.setFont(Font.font(13));
-        Spinner<Double> numRecomendSpinner = new Spinner<>(1,50,1);
+        numRecomendSpinner = new Spinner<>(1,50,1);
         HBox hboxNumRecomend = new HBox(numRecomendLabel,numRecomendSpinner);
         hboxNumRecomend.setSpacing(10);
         hboxNumRecomend.setAlignment(Pos.CENTER_LEFT);
@@ -59,8 +62,10 @@ public class Vista implements InterrogaVista,InformaVista {
         basedLabel.setFont(Font.font(13));
         ToggleGroup basedOnGroup = new ToggleGroup();
         ToggleButton features = new ToggleButton("Song features");
+        features.setOnAction(e -> controlador.selectAlgorithm(0));
         features.setToggleGroup(basedOnGroup);
         ToggleButton genre = new ToggleButton("Guessed genre");
+        genre.setOnAction(e -> controlador.selectAlgorithm(1));
         genre.setToggleGroup(basedOnGroup);
         VBox basedBox = new VBox(basedLabel, features,genre);
             //Distance
@@ -68,9 +73,11 @@ public class Vista implements InterrogaVista,InformaVista {
         distanceLabel.setFont(Font.font(13));
         ToggleGroup distanceGroup = new ToggleGroup();
         ToggleButton manhathanButton = new ToggleButton("High precicion");
+        manhathanButton.setOnAction(e-> controlador.selectDistance(0));
         manhathanButton.setToggleGroup(distanceGroup);
         ToggleButton euclideanButton = new ToggleButton("Standard precision");
         euclideanButton.setToggleGroup(distanceGroup);
+        euclideanButton.setOnAction(e-> controlador.selectDistance(1));
         VBox distanceBox = new VBox(distanceLabel, manhathanButton,euclideanButton);
             //Options box
         HBox hboxOptions = new HBox(basedBox,distanceBox);
@@ -80,8 +87,15 @@ public class Vista implements InterrogaVista,InformaVista {
         songsLabel.setFont(Font.font(17));
             //Song list
             ObservableList<String> songList = FXCollections.observableArrayList(modelo.getListaCanciones());
-            ListView<String> lista = new ListView<>(songList);
+            lista = new ListView<>(songList);
+            lista.setTooltip(new Tooltip("Select song to recommend similar to"));
         //General
+            Button recomend = new Button("recommend");
+            //ACABAR ESTO!!!
+            //ACABAR ESTO!!!
+            //ACABAR ESTO!!!
+            //ACABAR ESTO!!!
+            //recomend.setOnAction(e-> modelo.getListaRecomendaciones(lista.get));
         Label uno = new Label("Uno");
         Label dos = new Label("Dos");
         Label tres = new Label("Tres");
@@ -110,4 +124,11 @@ public class Vista implements InterrogaVista,InformaVista {
          */
 
     }
+
+    /*
+    public int getNumRecomendations() {
+        return numRecomendSpinner.getValue();
+    }
+
+     */
 }

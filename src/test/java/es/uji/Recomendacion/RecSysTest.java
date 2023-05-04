@@ -1,7 +1,7 @@
 package es.uji.Recomendacion;
 
 import es.uji.CSV.CSV;
-import es.uji.Estrategia.ManhatanDistance;
+import es.uji.Estrategia.ManhattanDistance;
 import es.uji.Exceptions.SongNotInDataBaseException;
 import es.uji.Algorithm.KNN.KNN;
 import es.uji.Algorithm.Kmeans.Kmeans;
@@ -18,8 +18,8 @@ import java.util.Scanner;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RecSysTest {
-    RecSys recSysKmeans = new RecSys<>(new Kmeans(15, 10, 7777777, new ManhatanDistance()));
-    RecSys recSysKNN = new RecSys<>(new KNN(new ManhatanDistance()));
+    RecSys recSysKmeans = new RecSys<>(new Kmeans(15, 10, 7777777, new ManhattanDistance()));
+    RecSys recSysKNN = new RecSys<>(new KNN(new ManhattanDistance()));
     CSV csv = new CSV();
     Table tableTrain;
     Table tableTest;

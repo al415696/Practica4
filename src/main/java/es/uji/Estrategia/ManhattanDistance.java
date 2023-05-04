@@ -4,7 +4,7 @@ import es.uji.Exceptions.IncompatiblePositionFormatException;
 
 import java.util.List;
 
-public class ManhatanDistance implements Distance{
+public class ManhattanDistance implements Distance{
     @Override
     public double calculateDistance(List<Double> p, List<Double> q) throws IncompatiblePositionFormatException {
 

@@ -2,7 +2,7 @@ package es.uji.Kmeans;
 
 import es.uji.Algorithm.Kmeans.Kmeans;
 import es.uji.CSV.CSV;
-import es.uji.Estrategia.ManhatanDistance;
+import es.uji.Estrategia.ManhattanDistance;
 import es.uji.Tables.Table;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -46,7 +46,7 @@ class KmeansTest {
 
     @Test
     void estimateMismoDato() {
-        kmeans = new Kmeans(3, 6, 7777777,new ManhatanDistance());
+        kmeans = new Kmeans(3, 6, 7777777,new ManhattanDistance());
         kmeans.train(table);
         row1.add(6.7);
         row1.add(2.5);
@@ -58,7 +58,7 @@ class KmeansTest {
 
     @Test
     void estimateDiferenteDato() {
-        kmeans = new Kmeans(3, 6, 7777777, new ManhatanDistance());
+        kmeans = new Kmeans(3, 6, 7777777, new ManhattanDistance());
         kmeans.train(table);
         row1.add(7.9);
         row1.add(3.8);
@@ -74,7 +74,7 @@ class KmeansTest {
 
     @Test
     void estimateMismoGrupo1() {
-        kmeans = new Kmeans(3, 6, 7777777, new ManhatanDistance());
+        kmeans = new Kmeans(3, 6, 7777777, new ManhattanDistance());
         kmeans.train(table);
         row1.add(6.7);
         row1.add(2.5);
@@ -90,7 +90,7 @@ class KmeansTest {
 
     @Test
     void estimateMismoGrupo2() {
-        kmeans = new Kmeans(3, 4, 7777777, new ManhatanDistance());
+        kmeans = new Kmeans(3, 4, 7777777, new ManhattanDistance());
         kmeans.train(table);
         row1.add(7.0);
         row1.add(3.2);
@@ -106,7 +106,7 @@ class KmeansTest {
 
     @Test
     void estimateDiferenteGrupo1() {
-        kmeans = new Kmeans(3, 6, 7777777, new ManhatanDistance());
+        kmeans = new Kmeans(3, 6, 7777777, new ManhattanDistance());
         kmeans.train(table);
         row1.add(7.0);
         row1.add(3.2);
@@ -122,7 +122,7 @@ class KmeansTest {
 
     @Test
     void estimateDiferenteGrupo2() {
-        kmeans = new Kmeans(3, 6, 7777777, new ManhatanDistance());
+        kmeans = new Kmeans(3, 6, 7777777, new ManhattanDistance());
         kmeans.train(table);
         row1.add(5.1);
         row1.add(3.5);
