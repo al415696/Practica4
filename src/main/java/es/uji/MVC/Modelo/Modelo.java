@@ -38,12 +38,10 @@ public class Modelo implements InterrogaModelo,CambioModelo {
     }
     private distanciaUsada distanciaActual;
 
-    int numRecommendations;
-
     //Tablas internas:
     private TableWithLabels trainTable;
     private TableWithLabels dataTable;
-    private ArrayList<String> songNames;
+    private ArrayList<String> songNames = new ArrayList<>();
 
     private int numOfGenres=0;
 
@@ -71,7 +69,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
         recomendador.run(dataTable, songNames);
     }
     @Override
-    public ArrayList<String> getListaCanciones() throws FileNotFoundException {
+    public ArrayList<String> getListaCanciones(){
         return songNames;
     }
 
@@ -87,8 +85,8 @@ public class Modelo implements InterrogaModelo,CambioModelo {
             }
             default -> {
                 System.out.printf("Distancia desconocida");
-                distance = new ManhattanDistance();
-                throw new RuntimeException();
+                vista.createPopUp("DISTANCE NOT SELECTED", "Distance was not selected please, select it");
+                return new ArrayList<>();
             }
         }
 
@@ -103,12 +101,16 @@ public class Modelo implements InterrogaModelo,CambioModelo {
             default -> {
                 System.out.printf("Algoritmo desconocido");
                 algorithm = new KNN(distance);
-                throw new RuntimeException();
+                vista.createPopUp("ALGORITHM NOT SELECTED", "Algorithm was not selected please, select it");
+                return new ArrayList<>();
             }
         }
 
         train(algorithm);
-        System.out.println(recomendador.recommend(nameLikedItem,numRecommendations));
+        System.out.println("num recomend " + numRecommendations);
+        System.out.println("name song " + nameLikedItem);
+        System.out.println("recomendación es: "+ recomendador.recommend(nameLikedItem,numRecommendations));
+        vista.createPopUp("PRUEBA", "Prueba");
        return recomendador.recommend(nameLikedItem,numRecommendations);
     }
     @Override

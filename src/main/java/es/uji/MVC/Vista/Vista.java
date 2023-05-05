@@ -1,14 +1,18 @@
 package es.uji.MVC.Vista;
 
+import es.uji.Exceptions.SongNotInDataBaseException;
 import es.uji.MVC.Controlador.Controlador;
 import es.uji.MVC.Controlador.Controller;
 import es.uji.MVC.Modelo.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -89,19 +93,38 @@ public class Vista implements InterrogaVista,InformaVista {
             ObservableList<String> songList = FXCollections.observableArrayList(modelo.getListaCanciones());
             lista = new ListView<>(songList);
             lista.setTooltip(new Tooltip("Select song to recommend similar to"));
+            /*
+            lista.setOnMouseClicked(e-> {
+                try {
+                    modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
+                } catch (SongNotInDataBaseException ex) {
+                    System.out.println("Canción no encontrada");
+                    createPopUp("SONG NOT FOUND", "An error has ocurred and the song you selected can't be found, try again");
+
+                }
+            });
+             */
         //General
             Button recomend = new Button("recommend");
             //ACABAR ESTO!!!
             //ACABAR ESTO!!!
             //ACABAR ESTO!!!
             //ACABAR ESTO!!!
-            //recomend.setOnAction(e-> modelo.getListaRecomendaciones(lista.get));
+            recomend.setOnAction(e-> {
+                try {
+                    modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
+                } catch (SongNotInDataBaseException ex) {
+                    System.out.println("Canción no encontrada");
+                    createPopUp("SONG NOT FOUND", "An error has ocurred and the song you selected can't be found, try again");
+                }
+            });
+
         Label uno = new Label("Uno");
         Label dos = new Label("Dos");
         Label tres = new Label("Tres");
         Label cuatro = new Label("Cuatro");
 
-        VBox vBox = new VBox(optionsLabel,hboxNumRecomend,hboxOptions,songsLabel,lista,uno, dos, tres, cuatro);
+        VBox vBox = new VBox(optionsLabel,hboxNumRecomend,hboxOptions,songsLabel,lista,recomend,uno, dos, tres, cuatro);
 
         vBox.setSpacing(10); vBox.setAlignment(Pos.TOP_LEFT); root.getChildren().add(vBox);
         mainStage.setScene(new Scene(root, 400, 500));
@@ -124,11 +147,26 @@ public class Vista implements InterrogaVista,InformaVista {
          */
 
     }
+    @Override
+    public void createPopUp(String title, String body){
+        Stage popUpStage = new Stage();
 
+
+        Label titleLabel = new Label(title);
+        titleLabel.setFont(Font.font(17));
+        Label bodyLabel = new Label(body);
+        bodyLabel.setFont(Font.font(10));
+        VBox vBox = new VBox(titleLabel,bodyLabel);
+        FlowPane flowPane = new FlowPane(vBox);
+        Scene popUpScene = new Scene(flowPane);
+        popUpStage.setScene(popUpScene);
+        popUpStage.show();
+    }
     /*
     public int getNumRecomendations() {
         return numRecomendSpinner.getValue();
     }
 
      */
+
 }
