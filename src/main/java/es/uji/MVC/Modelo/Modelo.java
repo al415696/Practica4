@@ -5,13 +5,11 @@ import es.uji.Algorithm.KNN.KNN;
 import es.uji.Algorithm.Kmeans.Kmeans;
 import es.uji.CSV.CSV;
 import es.uji.Estrategia.Distance;
-import es.uji.Estrategia.DistanceClient;
 import es.uji.Estrategia.EuclideanDistance;
 import es.uji.Estrategia.ManhattanDistance;
 import es.uji.Exceptions.SongNotInDataBaseException;
 import es.uji.MVC.Vista.InformaVista;
 import es.uji.Recomendacion.RecSys;
-import es.uji.Tables.Table;
 import es.uji.Tables.TableWithLabels;
 
 import java.io.File;
@@ -85,7 +83,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
             }
             default -> {
                 System.out.printf("Distancia desconocida");
-                vista.createPopUp("DISTANCE NOT SELECTED", "Distance was not selected please, select it");
+                vista.createGenericPopUp("DISTANCE NOT SELECTED", "Distance was not selected please, select it");
                 return new ArrayList<>();
             }
         }
@@ -101,7 +99,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
             default -> {
                 System.out.printf("Algoritmo desconocido");
                 algorithm = new KNN(distance);
-                vista.createPopUp("ALGORITHM NOT SELECTED", "Algorithm was not selected please, select it");
+                vista.createGenericPopUp("ALGORITHM NOT SELECTED", "Algorithm was not selected please, select it");
                 return new ArrayList<>();
             }
         }
@@ -110,7 +108,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
         System.out.println("num recomend " + numRecommendations);
         System.out.println("name song " + nameLikedItem);
         System.out.println("recomendación es: "+ recomendador.recommend(nameLikedItem,numRecommendations));
-        vista.createPopUp("PRUEBA", "Prueba");
+        //vista.createGenericPopUp("PRUEBA", "Prueba");
        return recomendador.recommend(nameLikedItem,numRecommendations);
     }
     @Override
