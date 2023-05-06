@@ -17,7 +17,6 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Vista implements InterrogaVista,InformaVista {
@@ -28,7 +27,7 @@ public class Vista implements InterrogaVista,InformaVista {
     private ToggleButton features;
     private ToggleButton genre;
 
-    private ToggleButton manhathanButton;
+    private ToggleButton manhattanButton;
     private ToggleButton euclideanButton;
 
 
@@ -74,12 +73,14 @@ public class Vista implements InterrogaVista,InformaVista {
         basedLabel.setFont(Font.font(13));
         ToggleGroup basedOnGroup = new ToggleGroup();
         features = new ToggleButton("Song features");
+        features.setTooltip(new Tooltip("Recomend based on features by using the Kmeans algorithm"));
         features.setOnAction(e -> {
             controlador.selectAlgorithm(0);
             setActiveIfReady();
         });
         features.setToggleGroup(basedOnGroup);
         genre = new ToggleButton("Guessed genre");
+        genre.setTooltip(new Tooltip("Recomend based on genre by using the KNN algorithm"));
         genre.setOnAction(e -> {
             controlador.selectAlgorithm(1);
             setActiveIfReady();
@@ -87,22 +88,24 @@ public class Vista implements InterrogaVista,InformaVista {
         genre.setToggleGroup(basedOnGroup);
         VBox basedBox = new VBox(basedLabel, features,genre);
             //Distance
-        Label distanceLabel = new Label("Recommend based on:");
+        Label distanceLabel = new Label("Recommend using:");
         distanceLabel.setFont(Font.font(13));
         ToggleGroup distanceGroup = new ToggleGroup();
-         manhathanButton = new ToggleButton("High precicion");
-        manhathanButton.setOnAction(e-> {
+         manhattanButton = new ToggleButton("High precicion");
+         manhattanButton.setTooltip(new Tooltip("Use manhattan distance"));
+        manhattanButton.setOnAction(e-> {
             controlador.selectDistance(0);
             setActiveIfReady();
         });
-        manhathanButton.setToggleGroup(distanceGroup);
+        manhattanButton.setToggleGroup(distanceGroup);
          euclideanButton = new ToggleButton("Standard precision");
+         euclideanButton.setTooltip(new Tooltip("Use euclidean distance"));
         euclideanButton.setToggleGroup(distanceGroup);
         euclideanButton.setOnAction(e-> {
             controlador.selectDistance(1);
             setActiveIfReady();
         });
-        VBox distanceBox = new VBox(distanceLabel, manhathanButton,euclideanButton);
+        VBox distanceBox = new VBox(distanceLabel, manhattanButton,euclideanButton);
             //Options box
         HBox hboxOptions = new HBox(basedBox,distanceBox);
         hboxOptions.setSpacing(30);
@@ -132,9 +135,9 @@ public class Vista implements InterrogaVista,InformaVista {
 
             recomend = new Button("recommend");
             recomend.setDisable(true);
-            recomend.setTooltip(new Tooltip("Select criteria, method and song before trying to get a recomendation"));
+            //recomend.setTooltip(new Tooltip("Select criteria, method and song before trying to get a recomendation"));
             SplitPane recomendPane = new SplitPane(recomend);
-            //recomendPane.setTooltip(new Tooltip("Select criteria, method and song before trying to get a recomendation"));
+            recomendPane.setTooltip(new Tooltip("Select criteria, method and song before trying to get a recomendation"));
             //ACABAR ESTO!!!
             recomend.setOnAction(e-> {
                 try {
@@ -220,7 +223,7 @@ public class Vista implements InterrogaVista,InformaVista {
      */
 
     private void setActiveIfReady(){
-        if ((features.isSelected() || genre.isSelected()) && (manhathanButton.isSelected() || euclideanButton.isSelected()) && lista.getSelectionModel().getSelectedIndex()>=0 ){
+        if ((features.isSelected() || genre.isSelected()) && (manhattanButton.isSelected() || euclideanButton.isSelected()) && lista.getSelectionModel().getSelectedIndex()>=0 ){
             recomend.setDisable(false);
         }
     }
