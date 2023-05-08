@@ -1,6 +1,5 @@
 package es.uji.CSV;
 
-import es.uji.Rows.Row;
 import es.uji.Rows.RowWithLabel;
 import es.uji.Tables.TableWithLabels;
 
@@ -23,7 +22,7 @@ public class CSVLabeledFileReader extends CSVUnlabeledFileReader{
             listDatos.add(Double.parseDouble(datos[i]));
         }
         if (((TableWithLabels)tableActual).getIndexFromLabel(datos[datos.length - 1]) == null)
-            nextRowIndex = ((TableWithLabels)tableActual).getNextIndex();
+            nextRowIndex = ((TableWithLabels)tableActual).getNumOfLabels();
         else
             nextRowIndex = ((TableWithLabels)tableActual).getIndexFromLabel(datos[datos.length - 1]);
 

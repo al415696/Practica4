@@ -49,6 +49,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
 
 
     public void initializeTrainTable(String trainDirection) throws FileNotFoundException {
+        //trainTable = new CSV().readTableWithLabels(trainDirection);
         trainTable = new CSV().readTableWithLabels(trainDirection);
     }
     public void initializeDataTable(String dataDirection) throws FileNotFoundException {
@@ -58,6 +59,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
     public void initializeSongNames(String namesDirection) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(namesDirection));
         songNames = new ArrayList<>();
+
         while (scanner.hasNextLine()) songNames.add(scanner.nextLine());
     }
 
@@ -92,6 +94,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
         switch (algoritmoActual){
             case Kmeans -> {
                 algorithm = new Kmeans(numOfGenres,10,7777777,distance);
+                System.out.println("num genres: " + numOfGenres);
             }
             case KNN -> {
                 algorithm = new KNN(distance);
@@ -107,7 +110,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
         train(algorithm);
         System.out.println("num recomend " + numRecommendations);
         System.out.println("name song " + nameLikedItem);
-        System.out.println("recomendación es: "+ recomendador.recommend(nameLikedItem,numRecommendations));
+        //System.out.println("recomendación es: "+ recomendador.recommend(nameLikedItem,numRecommendations));
         //vista.createGenericPopUp("PRUEBA", "Prueba");
        return recomendador.recommend(nameLikedItem,numRecommendations);
     }

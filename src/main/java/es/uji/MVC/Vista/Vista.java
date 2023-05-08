@@ -76,14 +76,14 @@ public class Vista implements InterrogaVista,InformaVista {
         features.setTooltip(new Tooltip("Recomend based on features by using the Kmeans algorithm"));
         features.setOnAction(e -> {
             controlador.selectAlgorithm(0);
-            setActiveIfReady();
+            setIfReady();
         });
         features.setToggleGroup(basedOnGroup);
         genre = new ToggleButton("Guessed genre");
         genre.setTooltip(new Tooltip("Recomend based on genre by using the KNN algorithm"));
         genre.setOnAction(e -> {
             controlador.selectAlgorithm(1);
-            setActiveIfReady();
+            setIfReady();
         });
         genre.setToggleGroup(basedOnGroup);
         VBox basedBox = new VBox(basedLabel, features,genre);
@@ -95,7 +95,7 @@ public class Vista implements InterrogaVista,InformaVista {
          manhattanButton.setTooltip(new Tooltip("Use manhattan distance"));
         manhattanButton.setOnAction(e-> {
             controlador.selectDistance(0);
-            setActiveIfReady();
+            setIfReady();
         });
         manhattanButton.setToggleGroup(distanceGroup);
          euclideanButton = new ToggleButton("Standard precision");
@@ -103,7 +103,7 @@ public class Vista implements InterrogaVista,InformaVista {
         euclideanButton.setToggleGroup(distanceGroup);
         euclideanButton.setOnAction(e-> {
             controlador.selectDistance(1);
-            setActiveIfReady();
+            setIfReady();
         });
         VBox distanceBox = new VBox(distanceLabel, manhattanButton,euclideanButton);
             //Options box
@@ -118,7 +118,7 @@ public class Vista implements InterrogaVista,InformaVista {
             lista.setTooltip(new Tooltip("Select song to recommend similar to"));
 
             lista.setOnMouseClicked(e-> {
-                setActiveIfReady();
+                setIfReady();
                 /*
                 try {
                     modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
@@ -141,12 +141,15 @@ public class Vista implements InterrogaVista,InformaVista {
             //ACABAR ESTO!!!
             recomend.setOnAction(e-> {
                 try {
+                    System.out.println("IndiceCancion "+modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()));
+                    System.out.println("NumSpinner "+numRecomendSpinner.getValue());
                     createRecomendationPopUp(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),
                             modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue()));
                     modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
                 } catch (SongNotInDataBaseException ex) {
                     System.out.println("Canción no encontrada");
-                    createGenericPopUp("SONG NOT FOUND", "An error has ocurred and the song you selected can't be found, try again");
+                    createGenericPopUp("SONG NOT FOUND", "An unexpected error has ocurred and the song you selected can't be found on the database." +
+                            "\nTry again with other song or contact your low quality applications provider");
                 }
             });
         //General
@@ -199,13 +202,12 @@ public class Vista implements InterrogaVista,InformaVista {
         System.out.println("Create recomendPopUP");
         Stage popUpStage = new Stage();
 
-        Label titleLabel = new Label("Recomendations for " + songTitle);
+        Label titleLabel = new Label("Recomendations for " + songTitle+ " :");
         titleLabel.setFont(Font.font(17));
-        String body = "";
-        for (String recom : recomendations) {
-            body += recom + "\n";
-        }
-        Label bodyLabel = new Label(body);
+        StringBuilder body = new StringBuilder();
+        for (String recom : recomendations)
+            body.append(recom).append("\n");
+        Label bodyLabel = new Label(body.toString());
         bodyLabel.setFont(Font.font(13));
         VBox vBox = new VBox(titleLabel,bodyLabel);
         FlowPane flowPane = new FlowPane(vBox);
@@ -213,6 +215,7 @@ public class Vista implements InterrogaVista,InformaVista {
         Scene popUpScene = new Scene(flowPane);
         popUpStage.setScene(popUpScene);
         popUpStage.show();
+        popUpStage.setAlwaysOnTop(true);
     }
 
     /*
@@ -222,9 +225,12 @@ public class Vista implements InterrogaVista,InformaVista {
 
      */
 
-    private void setActiveIfReady(){
+    private void setIfReady(){
         if ((features.isSelected() || genre.isSelected()) && (manhattanButton.isSelected() || euclideanButton.isSelected()) && lista.getSelectionModel().getSelectedIndex()>=0 ){
             recomend.setDisable(false);
+        }
+        else{
+            recomend.setDisable(true);
         }
     }
 }

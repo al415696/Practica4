@@ -62,7 +62,7 @@ public class CSV {
                 datosLinea.add(Double.parseDouble(datos[i]));
             }
             if (nuevaTabla.getIndexFromLabel(datos[datos.length - 1]) == null)
-                nextRowIndex = nuevaTabla.getNextIndex();
+                nextRowIndex = nuevaTabla.getNumOfLabels();
             else
                 nextRowIndex = nuevaTabla.getIndexFromLabel(datos[datos.length - 1]);
 

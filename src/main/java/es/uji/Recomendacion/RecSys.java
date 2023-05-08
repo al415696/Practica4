@@ -23,7 +23,7 @@ public class RecSys<D, R> {
     public void run(Table testData, List<String> testItemNames) {
 
         for (int i = 1; i < testData.getSize(); i++) {
-            grupoTestData.add((Integer) algorithm.estimate(testData.getRowAt(i).getData()));
+            grupoTestData.add( (Integer)algorithm.estimate(testData.getRowAt(i).getData()));
         }
         ArrayList<String> respuesta = new ArrayList<>();
         respuesta.addAll(testItemNames);
@@ -60,15 +60,19 @@ public class RecSys<D, R> {
     private List<String> recomendOfSameGroup(int grupo, String nombre, int numeroRec) {
         ArrayList<String> recomendacion = new ArrayList<>();
         int contador = 0;
+        System.out.println("Grupo del recomendado: " + grupo);
         for (int i = 0; i < grupoTestData.size(); i++) {
+            System.out.println(getSongGroup(testItemNames.get(i)));
             if (grupoTestData.get(i) == grupo && !testItemNames.get(i).equals(nombre)) {
                 recomendacion.add(testItemNames.get(i));
+                System.out.println("Se recomendara" + testItemNames.get(i));
                 contador++;
                 if (contador == numeroRec)
                     return recomendacion;
             }
 
         }
+        System.out.println("NO SUFICIENTES CANCIONES");
         return recomendacion;
     }
 

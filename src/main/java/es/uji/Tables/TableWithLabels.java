@@ -34,12 +34,12 @@ public class TableWithLabels extends Table {
         return super.numberColumns() - 1;
     }
 
-    public int getNextIndex() {
-        return nextIndex + 1;
-    }
-
     public int getNumOfLabels() {
         return nextIndex + 1;
     }
+
+    //public int getNumOfLabels() {
+        //return nextIndex + 1;
+    //}
 }
 

@@ -25,8 +25,8 @@ public class Initializer extends Application  {
 
         modelo.setVista(vista);
         modelo.initializeSongNames("src/files/songs_test_names.csv");
-        modelo.initializeTrainTable("src/files/songs_train_withoutnames.csv");
-        modelo.initializeDataTable("src/files/songs_test_withoutnames.csv");
+        modelo.initializeTrainTable("src/files/songs_train.csv");
+        modelo.initializeDataTable("src/files/songs_test.csv");
 
 
         controlador.setVista(vista);
