@@ -2,6 +2,7 @@ package es.uji.Recomendacion;
 
 import es.uji.Algorithm.Algorithm;
 import es.uji.CSV.CSV;
+import es.uji.Estrategia.EuclideanDistance;
 import es.uji.Estrategia.ManhattanDistance;
 import es.uji.Algorithm.KNN.KNN;
 import es.uji.Algorithm.Kmeans.Kmeans;
@@ -31,16 +32,20 @@ class SongRecSys {
 
         // Algorithms
         Map<String, Algorithm> algorithms = new HashMap<>();
-        algorithms.put("knn", new KNN(new ManhattanDistance()));
-        algorithms.put("kmeans", new Kmeans(15, 200, 4321, new ManhattanDistance()));
+        algorithms.put("knnMan", new KNN(new ManhattanDistance()));
+        algorithms.put("kmeansMan", new Kmeans(15, 200, 4321, new ManhattanDistance()));
+        algorithms.put("knnEuc", new KNN(new EuclideanDistance()));
+        algorithms.put("kmeansEuc", new Kmeans(15, 200, 4321, new EuclideanDistance()));
 
         // Tables
         Map<String, Table> tables = new HashMap<>();
         String[] stages = {"train", "test"};
         CSV csv = new CSV();
         for (String stage : stages) {
-            tables.put("knn" + stage, csv.readTableWithLabels(filenames.get("knn" + stage)));
-            tables.put("kmeans" + stage, csv.readTable(filenames.get("kmeans" + stage)));
+            tables.put("knnMan" + stage, csv.readTableWithLabels(filenames.get("knn" + stage)));
+            tables.put("kmeansMan" + stage, csv.readTable(filenames.get("kmeans" + stage)));
+            tables.put("knnEuc" + stage, csv.readTableWithLabels(filenames.get("knn" + stage)));
+            tables.put("kmeansEuc" + stage, csv.readTable(filenames.get("kmeans" + stage)));
         }
 
         // Names of items
@@ -79,7 +84,13 @@ class SongRecSys {
     }
 
     public static void main(String[] args) throws Exception {
-        new SongRecSys("knn");
-        new SongRecSys("kmeans");
+        System.out.println("KNN Manhattan:");
+        new SongRecSys("knnMan");
+        System.out.println("\nKMeans Manhattan:");
+        new SongRecSys("kmeansMan");
+        System.out.println("\nKNN Euclidean:");
+        new SongRecSys("knnEuc");
+        System.out.println("\nKMeans Euclidean:");
+        new SongRecSys("kmeansEuc");
     }
 }

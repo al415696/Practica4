@@ -210,12 +210,13 @@ public class Vista implements InterrogaVista,InformaVista {
         Stage popUpStage = new Stage();
         Label newNumRecomendLabel = new Label("Number of recomendations");
         newNumRecomendLabel.setFont(Font.font(13));
-        Spinner<Object> newNumRecomendSpinner = new Spinner<>(1,50,1);
+        Spinner<Integer> newNumRecomendSpinner = new Spinner<>(1,50,1);
         newNumRecomendSpinner.getValueFactory().setValue(numRecomendSpinner.getValue());
         newNumRecomendSpinner.setOnMouseClicked(e->{
+
             List<String> reRecomendationList = new ArrayList();
             try {
-                reRecomendationList = modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
+                reRecomendationList = modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),newNumRecomendSpinner.getValue());
             } catch (SongNotInDataBaseException ex) {
                 createGenericPopUp("UNEXPECTED ERROR", "An unexpected error has ocurred and the updated number of recomendations cannot be shown");
             }
