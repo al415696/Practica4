@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b5c23e10-1348-4f39-876b-3c36b2adde65" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Controlador/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Initializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/CambioModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/CambioModelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/InterrogaModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/InterrogaModelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Modelo/Modelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Vista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
