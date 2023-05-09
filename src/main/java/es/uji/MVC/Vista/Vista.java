@@ -10,10 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
@@ -208,6 +205,7 @@ public class Vista implements InterrogaVista,InformaVista {
     public void createRecomendationPopUp(String songTitle, List<String> recomendations){
         System.out.println("Create recomendPopUP");
         Stage popUpStage = new Stage();
+
         Label newNumRecomendLabel = new Label("Number of recomendations");
         newNumRecomendLabel.setFont(Font.font(13));
         Spinner<Integer> newNumRecomendSpinner = new Spinner<>(1,50,1);
