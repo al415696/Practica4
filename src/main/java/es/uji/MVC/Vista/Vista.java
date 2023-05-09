@@ -9,6 +9,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -119,16 +120,18 @@ public class Vista implements InterrogaVista,InformaVista {
 
             lista.setOnMouseClicked(e-> {
                 setIfReady();
-                /*
+                if(e.getButton().equals(MouseButton.PRIMARY) && e.getClickCount() == 2 && !recomend.isDisabled())
                 try {
+                    createRecomendationPopUp(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),
+                            modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue()));
                     modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
+
                 } catch (SongNotInDataBaseException ex) {
                     System.out.println("Canción no encontrada");
-
+                    createGenericPopUp("SONG NOT FOUND", "An unexpected error has ocurred and the song you selected can't be found on the database." +
+                            "\nTry again with other song or contact your low quality applications provider");
 
                 }
-
-                 */
             });
 
         //Recomend
