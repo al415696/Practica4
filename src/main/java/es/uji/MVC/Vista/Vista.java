@@ -18,6 +18,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Vista implements InterrogaVista,InformaVista {
@@ -36,6 +37,9 @@ public class Vista implements InterrogaVista,InformaVista {
     private ListView<String> lista;
 
     private Button recomend;
+
+    private StringBuilder body;
+    private Label recomendationPopUpBodyLabel;
 
     public static void main(String[] args) {
         System.out.println("Prueba");
@@ -204,15 +208,32 @@ public class Vista implements InterrogaVista,InformaVista {
     public void createRecomendationPopUp(String songTitle, List<String> recomendations){
         System.out.println("Create recomendPopUP");
         Stage popUpStage = new Stage();
+        Label newNumRecomendLabel = new Label("Number of recomendations");
+        newNumRecomendLabel.setFont(Font.font(13));
+        Spinner<Object> newNumRecomendSpinner = new Spinner<>(1,50,1);
+        newNumRecomendSpinner.getValueFactory().setValue(numRecomendSpinner.getValue());
+        newNumRecomendSpinner.setOnMouseClicked(e->{
+            List<String> reRecomendationList = new ArrayList();
+            try {
+                reRecomendationList = modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
+            } catch (SongNotInDataBaseException ex) {
+                createGenericPopUp("UNEXPECTED ERROR", "An unexpected error has ocurred and the updated number of recomendations cannot be shown");
+            }
+            body = new StringBuilder();
+            for (String recom : reRecomendationList)
+                body.append(recom).append("\n");
+            recomendationPopUpBodyLabel.setText(body.toString());
 
+
+        });
         Label titleLabel = new Label("Recomendations for " + songTitle+ " :");
         titleLabel.setFont(Font.font(17));
-        StringBuilder body = new StringBuilder();
+         body = new StringBuilder();
         for (String recom : recomendations)
             body.append(recom).append("\n");
-        Label bodyLabel = new Label(body.toString());
-        bodyLabel.setFont(Font.font(13));
-        VBox vBox = new VBox(titleLabel,bodyLabel);
+        recomendationPopUpBodyLabel = new Label(body.toString());
+        recomendationPopUpBodyLabel.setFont(Font.font(13));
+        VBox vBox = new VBox(newNumRecomendLabel,newNumRecomendSpinner, titleLabel,recomendationPopUpBodyLabel);
         FlowPane flowPane = new FlowPane(vBox);
         flowPane.setPadding(new Insets(5,10,10,10));
         Scene popUpScene = new Scene(flowPane);
