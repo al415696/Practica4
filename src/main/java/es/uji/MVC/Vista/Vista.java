@@ -232,10 +232,17 @@ public class Vista implements InterrogaVista,InformaVista {
             body.append(recom).append("\n");
         recomendationPopUpBodyLabel = new Label(body.toString());
         recomendationPopUpBodyLabel.setFont(Font.font(13));
-        VBox vBox = new VBox(newNumRecomendLabel,newNumRecomendSpinner, titleLabel,recomendationPopUpBodyLabel);
-        FlowPane flowPane = new FlowPane(vBox);
-        flowPane.setPadding(new Insets(5,10,10,10));
-        Scene popUpScene = new Scene(flowPane);
+
+        ScrollPane scrollPane = new ScrollPane(recomendationPopUpBodyLabel);
+        scrollPane.setHmin(100);
+        VBox vBox = new VBox(newNumRecomendLabel,newNumRecomendSpinner, titleLabel,scrollPane);
+
+        FlowPane recomendationPopUpPane = new FlowPane(vBox);
+        recomendationPopUpPane.setPadding(new Insets(5,10,10,10));
+        //recomendationPopUpPane.setHmin(400);
+        //recomendationPopUpPane.setVmin(400);
+        Scene popUpScene = new Scene(recomendationPopUpPane);
+
         popUpStage.setScene(popUpScene);
         popUpStage.show();
         popUpStage.setAlwaysOnTop(true);
