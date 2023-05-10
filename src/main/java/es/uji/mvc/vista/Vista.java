@@ -39,7 +39,6 @@ public class Vista implements InterrogaVista,InformaVista {
     Stage recomPopUpStage;
 
     public static void main(String[] args) {
-        System.out.println("Prueba");
     }
     public void setModelo(final InterrogaModelo modelo) {
         this.modelo = modelo;
@@ -128,7 +127,6 @@ public class Vista implements InterrogaVista,InformaVista {
                     modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
 
                 } catch (SongNotInDataBaseException ex) {
-                    System.out.println("Canción no encontrada");
                     createGenericPopUp("SONG NOT FOUND", "An unexpected error has ocurred and the song you selected can't be found on the database." +
                             "\nTry again with other song or contact your low quality applications provider");
 
@@ -144,13 +142,10 @@ public class Vista implements InterrogaVista,InformaVista {
 
             recomend.setOnAction(e-> {
                 try {
-                    System.out.println("IndiceCancion "+modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()));
-                    System.out.println("NumSpinner "+numRecomendSpinner.getValue());
                     createRecomendationPopUp(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),
                             modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue()));
                     modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
                 } catch (SongNotInDataBaseException ex) {
-                    System.out.println("Canción no encontrada");
                     createGenericPopUp("SONG NOT FOUND", "An unexpected error has ocurred and the song you selected can't be found on the database." +
                             "\nTry again with other song or contact your low quality applications provider");
                 }
@@ -164,7 +159,6 @@ public class Vista implements InterrogaVista,InformaVista {
     }
     @Override
     public void createGenericPopUp(String title, String body){
-        System.out.println("Create popUP");
         Stage popUpStage = new Stage();
 
         Label titleLabel = new Label(title);
@@ -179,7 +173,6 @@ public class Vista implements InterrogaVista,InformaVista {
     }
     @Override
     public void createRecomendationPopUp(String songTitle, List<String> recomendations){
-        System.out.println("Create recomendPopUP");
         recomPopUpStage = new Stage();
 
         Label newNumRecomendLabel = new Label("Number of recomendations");

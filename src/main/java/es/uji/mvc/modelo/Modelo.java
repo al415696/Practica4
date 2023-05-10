@@ -21,7 +21,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
     private InformaVista vista;
 
     private RecSys recomendador;
-    
+
     private enum algoritmoUsado {
         Kmeans,
         KNN;
@@ -80,7 +80,6 @@ public class Modelo implements InterrogaModelo,CambioModelo {
                 distance = new EuclideanDistance();
             }
             default -> {
-                System.out.printf("Distancia desconocida");
                 vista.createGenericPopUp("DISTANCE NOT SELECTED", "Distance was not selected please, select it");
                 return new ArrayList<>();
             }
@@ -90,13 +89,12 @@ public class Modelo implements InterrogaModelo,CambioModelo {
         switch (algoritmoActual){
             case Kmeans -> {
                 algorithm = new Kmeans(numOfGenres,10,7777777,distance);
-                System.out.println("num genres: " + numOfGenres);
             }
             case KNN -> {
                 algorithm = new KNN(distance);
             }
             default -> {
-                System.out.printf("Algoritmo desconocido");
+
                 algorithm = new KNN(distance);
                 vista.createGenericPopUp("ALGORITHM NOT SELECTED", "Algorithm was not selected please, select it");
                 return new ArrayList<>();
@@ -104,21 +102,17 @@ public class Modelo implements InterrogaModelo,CambioModelo {
         }
 
         train(algorithm);
-        System.out.println("num recomend " + numRecommendations);
-        System.out.println("name song " + nameLikedItem);
 
        return recomendador.recommend(nameLikedItem,numRecommendations);
     }
     @Override
     public void selectAlgorithm(int indice) {
         algoritmoActual =  algoritmoUsado.values()[indice];
-        System.out.println("ahora algoritmos es " + algoritmoUsado.values()[indice]);
     }
 
     @Override
     public void selectDistance(int indice) {
         distanciaActual =  distanciaUsada.values()[indice];
-        System.out.println("ahora distancia es " + distanciaUsada.values()[indice]);
     }
 
 }

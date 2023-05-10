@@ -13,7 +13,6 @@ public class Initializer extends Application  {
     InterrogaModelo model;
 
     public static void main(String[] args) {
-        System.out.println("Prueba");
         launch(args);
     }
 
