@@ -51,7 +51,7 @@ public class Vista implements InterrogaVista,InformaVista {
         this.controlador = controlador;
     }
 
-        public void creaGUI() throws FileNotFoundException {
+        public void creaGUI() {
         mainStage.setTitle("Song Recommender");
         StackPane root = new StackPane();
         root.setPadding(new Insets(10));
