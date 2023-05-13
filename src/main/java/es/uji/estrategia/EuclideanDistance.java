@@ -18,4 +18,3 @@ public class EuclideanDistance implements Distance {
 
     }
 }
-//System.exit

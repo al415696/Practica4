@@ -31,22 +31,12 @@ public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer>, D
             double cercaniaMaxima;
 
             double sumatorioLocal = 0;
-        /*for (int j = 0; j < nColumnas; j++) {
-            sumatorioLocal += Math.pow(data.get(j) - tabla.getRowAt(1).getData().get(j), 2);
-
-        }
-        sumatorioLocal = Math.sqrt(sumatorioLocal);*/
 
             sumatorioLocal = distance.calculateDistance(data, tabla.getRowAt(1).getData());
             cercaniaMaxima = sumatorioLocal;
 
             for (int i = 1; i < tabla.getSize(); i++) {
-                //sumatorioLocal = 0;
                 rowActual = tabla.getRowAt(i);
-            /*for (int j = 0; j < nColumnas; j++) {
-                sumatorioLocal += Math.pow(data.get(j) - rowActual.getData().get(j), 2);
-            }
-            sumatorioLocal = Math.sqrt(sumatorioLocal);*/
                 sumatorioLocal = distance.calculateDistance(data, rowActual.getData());
 
                 if (sumatorioLocal < cercaniaMaxima) {

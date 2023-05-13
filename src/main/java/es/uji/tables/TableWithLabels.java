@@ -38,8 +38,5 @@ public class TableWithLabels extends Table {
         return nextIndex + 1;
     }
 
-    //public int getNumOfLabels() {
-        //return nextIndex + 1;
-    //}
 }
 
