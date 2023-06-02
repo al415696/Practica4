@@ -1,6 +1,6 @@
 package es.uji.estrategia;
 
-import es.uji.exceptions.IncompatiblePositionFormatException;
+import es.uji.algorithm.IncompatiblePositionFormatException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 

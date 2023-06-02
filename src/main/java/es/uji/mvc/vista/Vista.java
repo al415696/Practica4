@@ -1,6 +1,6 @@
 package es.uji.mvc.vista;
 
-import es.uji.exceptions.SongNotInDataBaseException;
+import es.uji.recomendacion.SongNotInDataBaseException;
 import es.uji.mvc.controlador.Controller;
 import es.uji.mvc.modelo.*;
 import javafx.collections.FXCollections;
@@ -14,7 +14,6 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import java.io.FileNotFoundException;
 import java.util.List;
 
 public class Vista implements InterrogaVista,InformaVista {

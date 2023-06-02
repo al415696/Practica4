@@ -2,10 +2,11 @@ package es.uji.mvc.controlador;
 
 
 import es.uji.algorithm.Algorithm;
+import es.uji.algorithm.IncompatiblePositionFormatException;
 import es.uji.csv.CSV;
 import es.uji.estrategia.EuclideanDistance;
 import es.uji.estrategia.ManhattanDistance;
-import es.uji.exceptions.SongNotInDataBaseException;
+import es.uji.recomendacion.SongNotInDataBaseException;
 import es.uji.algorithm.knn.KNN;
 import es.uji.algorithm.kmeans.Kmeans;
 import es.uji.mvc.modelo.CambioModelo;
@@ -69,7 +70,11 @@ public class Controlador implements Controller {
         List<String> names = getListaCanciones();
 
         recsys = new RecSys(algorithms.get(algoritmo));
-        recsys.train(tables.get(algoritmo + "train"));
+        try {
+            recsys.train(tables.get(algoritmo + "train"));
+        } catch (IncompatiblePositionFormatException e) {
+            e.printStackTrace();
+        }
         recsys.run(tables.get(algoritmo + "test"), names);
         return (ArrayList<String>) recsys.recommend(nameLikedItem, numRecommendations);
     }

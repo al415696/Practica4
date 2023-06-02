@@ -1,6 +1,6 @@
 package es.uji.estrategia;
 
-import es.uji.exceptions.IncompatiblePositionFormatException;
+import es.uji.algorithm.IncompatiblePositionFormatException;
 
 import java.util.List;
 

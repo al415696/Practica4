@@ -4,7 +4,7 @@ import es.uji.algorithm.Algorithm;
 import es.uji.cluster.Cluster;
 import es.uji.estrategia.Distance;
 import es.uji.estrategia.DistanceClient;
-import es.uji.exceptions.IncompatiblePositionFormatException;
+import es.uji.algorithm.IncompatiblePositionFormatException;
 import es.uji.tables.Row;
 import es.uji.tables.Table;
 
@@ -28,7 +28,7 @@ public class Kmeans implements Algorithm<Table, List<Double>, Integer>, Distance
     }
 
     @Override
-    public void train(Table datos) {
+    public void train(Table datos) throws IncompatiblePositionFormatException {
         Random random = new Random(seed);
         List<Cluster> representantes = new ArrayList<>();
         HashMap<Integer, Row> indicesCentroidesOriginales = new HashMap<>();
@@ -53,28 +53,18 @@ public class Kmeans implements Algorithm<Table, List<Double>, Integer>, Distance
         for (int t = 0; t < numIterations - 1; t++) {
 
             //Borra los grupos al principio de cada iteración para reasignarlos
-            for (int i = 0; i < numClusters; i++) {
-                representantes.get(i).ClearGroup();
-            }
+            clearAllGroups(representantes);
 
             //Repite una vez por cada fila de la tabla
             for (int i = 0; i < datos.getSize(); i++) {
                 //Empieza calculado la distancia al centro del primer cluster y asumiendo que es el más cercano
                 indiceMayorCercania = 0;
-                sumatorioLocal = 0;
-                for (int j = 0; j < nColumnas; j++) {
-                    sumatorioLocal += Math.pow(datos.getRowAt(i).getData().get(j) - representantes.get(0).getCentroide().getData().get(j), 2);
-                }
-                sumatorioLocal = Math.sqrt(sumatorioLocal);
+                sumatorioLocal = distance.calculateDistance(datos.getRowAt(i).getData(),representantes.get(0).getCentroide().getData());
                 cercaniaMaxima = sumatorioLocal;
+
                 //Mira la distancia para los demás representantes
                 for (int j = 1; j < representantes.size(); j++) {
-                    sumatorioLocal = 0;
-                    for (int k = 0; k < nColumnas; k++) {
-                        sumatorioLocal += Math.pow(datos.getRowAt(i).getData().get(k) - representantes.get(j).getCentroide().getData().get(k), 2);
-                    }
-                    sumatorioLocal = Math.sqrt(sumatorioLocal);
-
+                    sumatorioLocal = distance.calculateDistance(datos.getRowAt(i).getData(), representantes.get(j).getCentroide().getData());
                     if (sumatorioLocal < cercaniaMaxima) {
                         cercaniaMaxima = sumatorioLocal;
                         indiceMayorCercania = j;
@@ -92,6 +82,11 @@ public class Kmeans implements Algorithm<Table, List<Double>, Integer>, Distance
 
         grupos = representantes;
 
+    }
+    private void clearAllGroups(List<Cluster> representantes){
+        for (int i = 0; i < numClusters; i++) {
+            representantes.get(i).ClearGroup();
+        }
     }
 
     private Row calcularNuevoCentroide(Cluster viejoCluster, int numColumnas) {

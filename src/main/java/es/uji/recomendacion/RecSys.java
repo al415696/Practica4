@@ -1,7 +1,7 @@
 package es.uji.recomendacion;
 
 import es.uji.algorithm.Algorithm;
-import es.uji.exceptions.SongNotInDataBaseException;
+import es.uji.algorithm.IncompatiblePositionFormatException;
 import es.uji.tables.Table;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class RecSys<D, R> {
         this.algorithm = algorithm;
     }
 
-    public void train(Table trainData) {
+    public void train(Table trainData) throws IncompatiblePositionFormatException {
         algorithm.train(trainData);
     }
 

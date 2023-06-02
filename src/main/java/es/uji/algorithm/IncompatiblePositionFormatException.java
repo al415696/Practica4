@@ -1,4 +1,4 @@
-package es.uji.exceptions;
+package es.uji.algorithm;
 
 import java.util.List;
 

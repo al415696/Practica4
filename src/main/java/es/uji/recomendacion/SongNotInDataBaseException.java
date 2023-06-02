@@ -1,4 +1,4 @@
-package es.uji.exceptions;
+package es.uji.recomendacion;
 
 
 public class SongNotInDataBaseException extends Exception {

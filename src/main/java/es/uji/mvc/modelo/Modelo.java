@@ -1,13 +1,14 @@
 package es.uji.mvc.modelo;
 
 import es.uji.algorithm.Algorithm;
+import es.uji.algorithm.IncompatiblePositionFormatException;
 import es.uji.algorithm.knn.KNN;
 import es.uji.algorithm.kmeans.Kmeans;
 import es.uji.csv.CSV;
 import es.uji.estrategia.Distance;
 import es.uji.estrategia.EuclideanDistance;
 import es.uji.estrategia.ManhattanDistance;
-import es.uji.exceptions.SongNotInDataBaseException;
+import es.uji.recomendacion.SongNotInDataBaseException;
 import es.uji.mvc.vista.InformaVista;
 import es.uji.recomendacion.RecSys;
 import es.uji.tables.TableWithLabels;
@@ -61,7 +62,11 @@ public class Modelo implements InterrogaModelo,CambioModelo {
 
     private void train(Algorithm algorithm){
         recomendador = new RecSys(algorithm);
-        recomendador.train(trainTable);
+        try {
+            recomendador.train(trainTable);
+        } catch (IncompatiblePositionFormatException e) {
+            e.printStackTrace();
+        }
         recomendador.run(dataTable, songNames);
     }
     @Override

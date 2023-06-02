@@ -4,7 +4,7 @@ import es.uji.algorithm.Algorithm;
 import es.uji.algorithm.NotMatchingSizeException;
 import es.uji.estrategia.Distance;
 import es.uji.estrategia.DistanceClient;
-import es.uji.exceptions.IncompatiblePositionFormatException;
+import es.uji.algorithm.IncompatiblePositionFormatException;
 import es.uji.tables.RowWithLabel;
 import es.uji.tables.TableWithLabels;
 

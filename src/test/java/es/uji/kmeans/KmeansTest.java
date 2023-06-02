@@ -1,5 +1,6 @@
 package es.uji.kmeans;
 
+import es.uji.algorithm.IncompatiblePositionFormatException;
 import es.uji.algorithm.kmeans.Kmeans;
 import es.uji.csv.CSV;
 import es.uji.estrategia.ManhattanDistance;
@@ -45,7 +46,7 @@ class KmeansTest {
     }
 
     @Test
-    void estimateMismoDato() {
+    void estimateMismoDato() throws IncompatiblePositionFormatException {
         kmeans = new Kmeans(3, 6, 7777777,new ManhattanDistance());
         kmeans.train(table);
         row1.add(6.7);
@@ -57,7 +58,7 @@ class KmeansTest {
     }
 
     @Test
-    void estimateDiferenteDato() {
+    void estimateDiferenteDato() throws IncompatiblePositionFormatException {
         kmeans = new Kmeans(3, 6, 7777777, new ManhattanDistance());
         kmeans.train(table);
         row1.add(7.9);
@@ -73,7 +74,7 @@ class KmeansTest {
     }
 
     @Test
-    void estimateMismoGrupo1() {
+    void estimateMismoGrupo1() throws IncompatiblePositionFormatException {
         kmeans = new Kmeans(3, 6, 7777777, new ManhattanDistance());
         kmeans.train(table);
         row1.add(6.7);
@@ -89,7 +90,7 @@ class KmeansTest {
     }
 
     @Test
-    void estimateMismoGrupo2() {
+    void estimateMismoGrupo2() throws IncompatiblePositionFormatException {
         kmeans = new Kmeans(3, 4, 7777777, new ManhattanDistance());
         kmeans.train(table);
         row1.add(7.0);
@@ -105,7 +106,7 @@ class KmeansTest {
     }
 
     @Test
-    void estimateDiferenteGrupo1() {
+    void estimateDiferenteGrupo1() throws IncompatiblePositionFormatException {
         kmeans = new Kmeans(3, 6, 7777777, new ManhattanDistance());
         kmeans.train(table);
         row1.add(7.0);
@@ -121,7 +122,7 @@ class KmeansTest {
     }
 
     @Test
-    void estimateDiferenteGrupo2() {
+    void estimateDiferenteGrupo2() throws IncompatiblePositionFormatException {
         kmeans = new Kmeans(3, 6, 7777777, new ManhattanDistance());
         kmeans.train(table);
         row1.add(5.1);

@@ -1,6 +1,6 @@
 package es.uji.mvc.modelo;
 
-import es.uji.exceptions.SongNotInDataBaseException;
+import es.uji.recomendacion.SongNotInDataBaseException;
 
 import java.util.ArrayList;
 import java.util.List;

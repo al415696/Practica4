@@ -1,11 +1,11 @@
 package es.uji.recomendacion;
 
+import es.uji.algorithm.IncompatiblePositionFormatException;
 import es.uji.algorithm.knn.KNN;
 import es.uji.algorithm.kmeans.Kmeans;
 import es.uji.csv.CSV;
 import es.uji.estrategia.EuclideanDistance;
 import es.uji.estrategia.ManhattanDistance;
-import es.uji.exceptions.SongNotInDataBaseException;
 import es.uji.tables.Table;
 import es.uji.tables.TableWithLabels;
 import org.junit.jupiter.api.BeforeEach;
@@ -44,7 +44,7 @@ class RecSysTest {
     }
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws IncompatiblePositionFormatException {
         recSysKmeansManhattan.train(tableTrain);
         recSysKNNManhattan.train(tableWithLabelsTrain);
         recSysKmeansEuclidean.train(tableTrain);
