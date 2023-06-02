@@ -17,7 +17,6 @@ public abstract class ReaderTemplate {
     protected abstract boolean hasMoreData();
     protected abstract String getNextData();
     public final Table readTableFromSource() throws IOException{
-        tableActual = new Table();
         openSource(documentoSource);
         if (hasMoreData()){
             processHeaders(getNextData());

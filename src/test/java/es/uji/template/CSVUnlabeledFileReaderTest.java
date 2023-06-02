@@ -1,4 +1,4 @@
-package es.uji.Template;
+package es.uji.template;
 
 import es.uji.csv.CSV;
 

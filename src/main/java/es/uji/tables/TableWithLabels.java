@@ -3,6 +3,7 @@ package es.uji.tables;
 import es.uji.rows.Row;
 import es.uji.rows.RowWithLabel;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +19,16 @@ public class TableWithLabels extends Table {
         super.addRow(filaConLabel);
     }
 
+    public void addRow(ArrayList<Double> fila, String label) {
+        RowWithLabel addedRow;
+        if (getIndexFromLabel(label) == null){
+            labelsToIndex.put(label, ++nextIndex);
+            addedRow = new RowWithLabel(fila,nextIndex);
+        }
+        else addedRow = new RowWithLabel(fila, getIndexFromLabel(label));
+
+        super.addRow(addedRow);
+    }
     @Override
     public RowWithLabel getRowAt(int pos) {
         return (RowWithLabel) super.getRowAt(pos);
