@@ -1,7 +1,7 @@
 package es.uji.csv;
 
-import es.uji.rows.Row;
-import es.uji.rows.RowWithLabel;
+import es.uji.tables.Row;
+import es.uji.tables.RowWithLabel;
 import es.uji.tables.Table;
 import es.uji.tables.TableWithLabels;
 

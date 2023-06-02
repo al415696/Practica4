@@ -5,7 +5,7 @@ import es.uji.cluster.Cluster;
 import es.uji.estrategia.Distance;
 import es.uji.estrategia.DistanceClient;
 import es.uji.exceptions.IncompatiblePositionFormatException;
-import es.uji.rows.Row;
+import es.uji.tables.Row;
 import es.uji.tables.Table;
 
 import java.util.*;

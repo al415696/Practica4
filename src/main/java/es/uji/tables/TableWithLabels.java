@@ -1,8 +1,5 @@
 package es.uji.tables;
 
-import es.uji.rows.Row;
-import es.uji.rows.RowWithLabel;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package es.uji.rows;
+package es.uji.tables;
 
 import java.util.List;
 

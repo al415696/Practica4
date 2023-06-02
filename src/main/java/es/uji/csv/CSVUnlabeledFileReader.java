@@ -1,8 +1,7 @@
 package es.uji.csv;
 
 
-import es.uji.csv.ReaderTemplate;
-import es.uji.rows.Row;
+import es.uji.tables.Row;
 import es.uji.tables.Table;
 
 import java.io.File;

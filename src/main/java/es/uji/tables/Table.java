@@ -1,7 +1,5 @@
 package es.uji.tables;
 
-import es.uji.rows.Row;
-
 import java.util.ArrayList;
 
 public class Table {
@@ -20,7 +18,7 @@ public class Table {
         return rows.get(pos);
     }
 
-    public ArrayList<Float> getHeader() {
+    public ArrayList<String> getHeader() {
         return header;
     }
 

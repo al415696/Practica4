@@ -1,6 +1,6 @@
 package es.uji.cluster;
 
-import es.uji.rows.Row;
+import es.uji.tables.Row;
 
 import java.util.ArrayList;
 import java.util.List;
