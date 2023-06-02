@@ -1,6 +1,7 @@
 package es.uji.algorithm.knn;
 
 import es.uji.algorithm.Algorithm;
+import es.uji.algorithm.NotMatchingSizeException;
 import es.uji.estrategia.Distance;
 import es.uji.estrategia.DistanceClient;
 import es.uji.exceptions.IncompatiblePositionFormatException;
@@ -20,11 +21,15 @@ public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer>, D
         tabla = data;
     }
 
-    public Integer estimate(List<Double> data) {
-        try {
-            int nColumnas = tabla.getHeader().size() - 1;
-            if (nColumnas != data.size())
-                return -1;
+    public Integer estimate(List<Double> data) throws NotMatchingSizeException, IncompatiblePositionFormatException {
+
+            int nColumnas = tabla.numberColumns();
+            if (nColumnas != data.size()){
+                throw new NotMatchingSizeException("knn");
+
+            }
+
+
             RowWithLabel rowActual;
 
             int indiceMayorCercania = 0;
@@ -46,11 +51,7 @@ public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer>, D
 
             }
             return indiceMayorCercania;
-        }
-        catch (IncompatiblePositionFormatException e){
-            e.printStackTrace();
-            return -1;
-        }
+
     }
 
     @Override

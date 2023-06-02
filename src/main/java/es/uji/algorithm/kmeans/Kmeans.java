@@ -118,7 +118,7 @@ public class Kmeans implements Algorithm<Table, List<Double>, Integer>, Distance
             int indiceMayorCercania = 0;
             double cercaniaMaxima;
 
-            double sumatorioLocal = 0;
+            double sumatorioLocal;
             sumatorioLocal = distance.calculateDistance(data, grupos.get(0).getCentroide().getData());
             cercaniaMaxima = sumatorioLocal;
 

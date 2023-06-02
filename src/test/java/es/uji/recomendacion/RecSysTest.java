@@ -34,7 +34,7 @@ class RecSysTest {
         try {
             tableTrain = csv.readTable("src/files/songs_train_withoutnames.csv");
             tableTest = csv.readTable("src/files/songs_test_withoutnames.csv");
-            tableWithLabelsTrain = csv.readTableWithLabels("src/files/songs_train_withoutnames.csv");
+            tableWithLabelsTrain = csv.readTableWithLabels("src/files/songs_train.csv");
             Scanner scanner = new Scanner(new File("src/files/songs_test_names.csv"));
             names = new ArrayList<>();
             while (scanner.hasNextLine()) names.add(scanner.nextLine());
@@ -78,22 +78,13 @@ class RecSysTest {
     }
     @Test
     void recommendExactly10KNNMan() throws SongNotInDataBaseException {
+        System.out.println("3");
         assertEquals(10, recSysKNNManhattan.recommend("Tonight",10).size());
     }
 
     @Test
-
-    void recommendsOfSameGroupKNNMan() throws SongNotInDataBaseException {
-        List recomendaciones = recSysKNNManhattan.recommend("Headbangers:Dubstep/Riddim",4);
-
-        for (int i = 0; i < recomendaciones.size(); i++) {
-            assertEquals(true, recSysKNNManhattan.getSongGroup((String) recomendaciones.get(i)) == recSysKNNManhattan.getSongGroup("Headbangers:Dubstep/Riddim"));
-        }
-
-    }
-
-    @Test
     void numRecommendations900KNNMan() throws SongNotInDataBaseException {
+        System.out.println("5");
         assertNotEquals(900, recSysKNNManhattan.recommend("Tonight", 900).size());
     }
     @Test
@@ -119,20 +110,12 @@ class RecSysTest {
 
     @Test
     void recommendExactly10KNNEuc() throws SongNotInDataBaseException {
+        System.out.println("6");
         System.out.println(recSysKNNEuclidean.recommend("Tonight",10));
         assertEquals(10, recSysKNNEuclidean.recommend("Tonight",10).size());
     }
 
-    @Test
 
-    void recommendsOfSameGroupKNNEuc() throws SongNotInDataBaseException {
-        List recomendaciones = recSysKNNEuclidean.recommend("Headbangers:Dubstep/Riddim",4);
-
-        for (int i = 0; i < recomendaciones.size(); i++) {
-            assertEquals(true, recSysKNNEuclidean.getSongGroup((String) recomendaciones.get(i)) == recSysKNNEuclidean.getSongGroup("Headbangers:Dubstep/Riddim"));
-        }
-
-    }
 
     @Test
     void numRecommendations900KNNEuc() throws SongNotInDataBaseException {

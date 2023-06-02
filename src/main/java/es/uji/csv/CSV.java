@@ -8,6 +8,7 @@ import es.uji.tables.TableWithLabels;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class CSV {
@@ -18,23 +19,16 @@ public class CSV {
         ArrayList<String> datosHeader = new ArrayList<>();
 
         Scanner entrada = new Scanner(new File(direc));
-        if (entrada.hasNextLine()) {
-            datos = entrada.nextLine().split(",");
-            for (int i = 0; i < datos.length; i++) {
-                datosHeader.add(datos[i]);
-            }
 
-            nuevaTabla.addHeader(datosHeader);
-        }
+        checkForHeader(entrada, datosHeader,nuevaTabla);
 
         nuevaTabla.addHeader(datosHeader);
 
         while (entrada.hasNextLine()) {
             ArrayList<Double> datosLinea = new ArrayList<>();
-
             datos = entrada.nextLine().split(",");
-            for (int i = 0; i < datos.length; i++) {
-                datosLinea.add(Double.parseDouble(datos[i]));
+            for (String dato : datos) {
+                datosLinea.add(Double.parseDouble(dato));
             }
             nuevaTabla.addRow(new Row(datosLinea));
         }
@@ -46,13 +40,7 @@ public class CSV {
         TableWithLabels nuevaTabla = new TableWithLabels();
         ArrayList<String> datosHeader = new ArrayList<>();
         Scanner entrada = new Scanner(new File(direc));
-        if (entrada.hasNextLine()) {
-            datos = entrada.nextLine().split(",");
-            for (int i = 0; i < datos.length; i++) {
-                datosHeader.add(datos[i]);
-            }
-            nuevaTabla.addHeader(datosHeader);
-        }
+        checkForHeader(entrada, datosHeader,nuevaTabla);
         int nextRowIndex;
         while (entrada.hasNextLine()) {
             ArrayList<Double> datosLinea = new ArrayList<>();
@@ -71,4 +59,11 @@ public class CSV {
         return nuevaTabla;
     }
 
+    private void checkForHeader(Scanner entrada, ArrayList<String> datosHeader, Table nuevaTabla){
+        if (entrada.hasNextLine()) {
+            String[] datos = entrada.nextLine().split(",");
+            Collections.addAll(datosHeader, datos);
+            nuevaTabla.addHeader(datosHeader);
+        }
+    }
 }

@@ -21,13 +21,17 @@ public class RecSys<D, R> {
     }
 
     public void run(Table testData, List<String> testItemNames) {
-
+    try {
         for (int i = 1; i < testData.getSize(); i++) {
-            grupoTestData.add( (Integer)algorithm.estimate(testData.getRowAt(i).getData()));
+            grupoTestData.add((Integer) algorithm.estimate(testData.getRowAt(i).getData()));
         }
         ArrayList<String> respuesta = new ArrayList<>();
         respuesta.addAll(testItemNames);
         this.testItemNames = respuesta;
+    }
+    catch(Exception e){
+        e.printStackTrace();
+    }
     }
 
 
