@@ -1,6 +1,7 @@
 package es.uji.template;
 import es.uji.csv.CSV;
 import es.uji.csv.CSVLabeledFileReader;
+import es.uji.csv.CSVUnlabeledFileReader;
 import es.uji.tables.TableWithLabels;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,14 +44,12 @@ public class CSVLabeledFileReaderTest {
     }
     @Test
     void TestCLFRThrows(){
-
-        try{
+        Exception e = assertThrows(FileNotFoundException.class, () -> {
             CSVLabeledFileReader auxiliaryCLFR = new CSVLabeledFileReader("DireccionSinNingunSentido");
             auxiliaryCLFR.readTableFromSource();
-        }
-        catch (IOException e){
-            assertEquals(FileNotFoundException.class, e.getClass());
-        }
-
+        });
+        String expectedMessage = "DireccionSinNingunSentido (El sistema no puede encontrar el archivo especificado)";
+        String actualMessage = e.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 }
