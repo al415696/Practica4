@@ -121,6 +121,9 @@ public class Vista implements InterrogaVista,InformaVista {
                 setIfReady();
                 if(e.getButton().equals(MouseButton.PRIMARY) && e.getClickCount() == 2 && !recomend.isDisabled())
                 try {
+                    if(recomPopUpStage!=null) {
+                        recomPopUpStage.close();
+                    }
                     createRecomendationPopUp(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),
                             modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue()));
                     modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
@@ -141,6 +144,9 @@ public class Vista implements InterrogaVista,InformaVista {
 
             recomend.setOnAction(e-> {
                 try {
+                    if(recomPopUpStage!=null) {
+                        recomPopUpStage.close();
+                    }
                     createRecomendationPopUp(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),
                             modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue()));
                     modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
