@@ -4,29 +4,30 @@ import es.uji.csv.CSV;
 import es.uji.tables.Table;
 import es.uji.tables.TableWithLabels;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RowWithLabelsTest {
-    String dirIris = "src/files/iris.csv";
-    String dirExpress = "src/files/miles_dollars.csv";
+    String dirIris = "src"+ File.separator +"files"+ File.separator +"iris.csv";
+    String dirExpress = "src"+ File.separator +"files"+ File.separator +"miles_dollars.csv";
 
     CSV csv = new CSV();
-    TableWithLabels tIris;
-    Table tExpress;
+    TableWithLabels tIris = csv.readTableWithLabels(dirIris);
+    Table tExpress = csv.readTable(dirExpress);
 
-    {
-        try {
-            tIris = csv.readTableWithLabels(dirIris);
-            tExpress = csv.readTable(dirExpress);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
+
+
+
 
     ArrayList<Double> fila;
+
+    public RowWithLabelsTest() throws FileNotFoundException {
+        super();
+    }
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {

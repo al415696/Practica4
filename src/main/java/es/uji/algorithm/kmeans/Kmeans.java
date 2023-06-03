@@ -108,7 +108,6 @@ public class Kmeans implements Algorithm<Table, List<Double>, Integer>, Distance
     public Integer estimate(List<Double> data) {
         try {
             if (grupos.size() == 0) throw new MissingResourceException("aun no se ha entrenado", "estimate", "7");
-            int nColumnas = grupos.get(0).getCentroide().getData().size();
 
             int indiceMayorCercania = 0;
             double cercaniaMaxima;

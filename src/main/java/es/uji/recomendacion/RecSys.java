@@ -79,13 +79,9 @@ public class RecSys<D, R> {
         return recomendacion;
     }
 
-    public int getSongGroup(String songName) {
-        try {
-            return grupoTestData.get(findName(songName));
-        }
-        catch (SongNotInDataBaseException e){
-            e.printStackTrace();
-            return -1;
-        }
+    public int getSongGroup(String songName) throws SongNotInDataBaseException {
+
+        return grupoTestData.get(findName(songName));
+
     }
 }

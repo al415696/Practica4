@@ -4,6 +4,7 @@ import es.uji.csv.CSV;
 import es.uji.tables.Table;
 import es.uji.tables.TableWithLabels;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -13,16 +14,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class TableTest {
     CSV csv = new CSV();
     ArrayList<String> listaEsperada;
-    TableWithLabels tableIris;
-    Table tableExpress;
+    TableWithLabels tableIris = csv.readTableWithLabels("src" + File.separator +  "files" + File.separator + "iris.csv");
+    Table tableExpress = csv.readTable("src"+ File.separator +"files"+ File.separator +"miles_dollars.csv");
 
-    {
-        try {
-            tableIris = csv.readTableWithLabels("src/files/iris.csv");
-            tableExpress = csv.readTable("src/files/miles_dollars.csv");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    public TableTest() throws FileNotFoundException {
+        super();
     }
 
 
@@ -35,7 +31,7 @@ public class TableTest {
     void wrongFileTestRegular() {
 
         System.out.println("Probando excepcion: iris.csv");
-        Exception exep = assertThrows(FileNotFoundException.class, () -> csv.readTable("/src/sinSentido"));
+        Exception exep = assertThrows(FileNotFoundException.class, () -> csv.readTable(File.separator + "src"+ File.separator + "sinSentido"));
         assertEquals(FileNotFoundException.class, exep.getClass());
     }
 
@@ -43,7 +39,7 @@ public class TableTest {
     void wrongFileTestLabels() {
 
         System.out.println("Probando excepcion en WithLabels: iris.csv");
-        Exception exep = assertThrows(FileNotFoundException.class, () -> csv.readTableWithLabels("/src/sinSentido"));
+        Exception exep = assertThrows(FileNotFoundException.class, () -> csv.readTableWithLabels(File.separator + "src"+ File.separator + "sinSentido"));
         assertEquals(FileNotFoundException.class, exep.getClass());
     }
 

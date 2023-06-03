@@ -85,7 +85,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
                 distance = new EuclideanDistance();
             }
             default -> {
-                vista.createGenericPopUp("DISTANCE NOT SELECTED", "Distance was not selected please, select it");
+                vista.notifyError("Distance was not selected please, select it");
                 return new ArrayList<>();
             }
         }
@@ -101,7 +101,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
             default -> {
 
                 algorithm = new KNN(distance);
-                vista.createGenericPopUp("ALGORITHM NOT SELECTED", "Algorithm was not selected please, select it");
+                vista.notifyError("Algorithm was not selected please, select it");
                 return new ArrayList<>();
             }
         }

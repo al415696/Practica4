@@ -20,7 +20,7 @@ import java.util.*;
 public class Controlador implements Controller {
     private CambioModelo modelo;
     private InterrogaVista vista;
-    private static RecSys recsys;
+    //private static RecSys recsys;
 
     public void setModelo(CambioModelo modelo) {
         this.modelo = modelo;
@@ -30,6 +30,7 @@ public class Controlador implements Controller {
         this.vista = vista;
 
     }
+    /*
     public static ArrayList<String> getListaCanciones() throws FileNotFoundException {
         Scanner scanner = new Scanner(new File("src/files/songs_test_names.csv"));
         ArrayList<String> canciones = new ArrayList<>();
@@ -37,6 +38,8 @@ public class Controlador implements Controller {
         return canciones;
     }
 
+     */
+/*
     public static ArrayList<String> getListaRecomendaciones(String nameLikedItem, int numRecommendations, String estrategia, String algoritmo) throws IOException, SongNotInDataBaseException {
         String sep = System.getProperty("file.separator");
         String ruta = "src/files/";
@@ -78,7 +81,7 @@ public class Controlador implements Controller {
         recsys.run(tables.get(algoritmo + "test"), names);
         return (ArrayList<String>) recsys.recommend(nameLikedItem, numRecommendations);
     }
-
+*/
     @Override
     public void selectAlgorithm(int indice) {
         modelo.selectAlgorithm(indice);

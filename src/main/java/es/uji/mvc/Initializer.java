@@ -7,6 +7,7 @@ import es.uji.mvc.vista.Vista;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Initializer extends Application  {
@@ -23,9 +24,9 @@ public class Initializer extends Application  {
         Vista vista = new Vista(stage);
 
         modelo.setVista(vista);
-        modelo.initializeSongNames("src/files/songs_test_names.csv");
-        modelo.initializeTrainTable("src/files/songs_train.csv");
-        modelo.initializeDataTable("src/files/songs_test.csv");
+        modelo.initializeSongNames("src"+ File.separator +"files"+ File.separator +"songs_test_names.csv");
+        modelo.initializeTrainTable("src"+ File.separator +"files"+ File.separator +"songs_train.csv");
+        modelo.initializeDataTable("src"+ File.separator +"files"+ File.separator +"songs_test.csv");
 
 
         controlador.setVista(vista);

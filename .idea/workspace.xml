@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5c23e10-1348-4f39-876b-3c36b2adde65" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/MVC/Vista/Vista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/csv/EmptyCSVDocumentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/kmeans/Kmeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/kmeans/Kmeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/knn/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/knn/KNN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/csv/ReaderTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/csv/ReaderTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/Initializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/Modelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/InformaVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/InformaVista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/Vista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/recomendacion/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/recomendacion/RecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/kmeans/KmeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/kmeans/KmeansTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/recomendacion/RecSysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/recomendacion/RecSysTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/row/RowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/row/RowTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/row/RowWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/row/RowWithLabelsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/table/TableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/table/TableTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/template/CSVLabeledFileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/template/CSVLabeledFileReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/template/CSVUnlabeledFileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/template/CSVUnlabeledFileReaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -31,58 +49,39 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2Ouad6JcR6jKzcYPDyhVThMrR1B" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/al415696/IdeaProjects/Practica4&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/user/Desktop/UJI/2n/2a mitad/Programación avanzada/Practicas/Practica4",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.completion"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\al415696\IdeaProjects\Practica4\src\main\java\es\uji\MVC\Vista" />
       <recent name="C:\Users\al415696\IdeaProjects\Practica4" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="es.uji.recomendacion" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Initializer">
-    <configuration name="Initializer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="es.uji.MVC.Initializer" />
-      <module name="Practica4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.MVC.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Vista" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="es.uji.MVC.Vista.Vista" />
-      <module name="Practica4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.MVC.Vista.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.All in Practica4">
     <configuration name="All in Practica4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica4" />
       <option name="PACKAGE_NAME" value="" />
@@ -91,11 +90,74 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RecSysTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.recomendacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.recomendacion" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.recomendacion.RecSysTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RecSysTest.recommendsOfSameGroupKNNEuc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.recomendacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.recomendacion" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.recomendacion.RecSysTest" />
+      <option name="METHOD_NAME" value="recommendsOfSameGroupKNNEuc" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RecSysTest.recommendsOfSameGroupKmeansMan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.recomendacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.recomendacion" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.recomendacion.RecSysTest" />
+      <option name="METHOD_NAME" value="recommendsOfSameGroupKmeansMan" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="es.uji.recomendacion in Practica4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Practica4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.recomendacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="es.uji.recomendacion" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Initializer" />
-        <item itemvalue="Application.Vista" />
         <item itemvalue="JUnit.All in Practica4" />
+        <item itemvalue="JUnit.RecSysTest" />
+        <item itemvalue="JUnit.RecSysTest.recommendsOfSameGroupKmeansMan" />
+        <item itemvalue="JUnit.es.uji.recomendacion in Practica4" />
+        <item itemvalue="JUnit.RecSysTest.recommendsOfSameGroupKNNEuc" />
       </list>
     </recent_temporary>
   </component>

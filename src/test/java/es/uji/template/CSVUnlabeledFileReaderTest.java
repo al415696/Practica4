@@ -3,9 +3,11 @@ package es.uji.template;
 import es.uji.csv.CSV;
 
 import es.uji.csv.CSVUnlabeledFileReader;
+import es.uji.csv.EmptyCSVDocumentException;
 import es.uji.tables.Table;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,21 +16,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CSVUnlabeledFileReaderTest {
 
-    String dirCsv = "src/files/miles_dollars.csv";
+    String dirCsv = "src"+ File.separator +"files"+ File.separator +"miles_dollars.csv";
     CSVUnlabeledFileReader csvUnlabeled = new CSVUnlabeledFileReader(dirCsv);
     ArrayList<String> listaEsperada;
-    Table tUnlabeled;
+    Table tUnlabeled = csvUnlabeled.readTableFromSource();
     ArrayList<Double> fila;
     Table primaryTable;
     Table secondaryTable;
 
-    {
-        try {
-            tUnlabeled = csvUnlabeled.readTableFromSource();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public CSVUnlabeledFileReaderTest() throws IOException, EmptyCSVDocumentException {
+        super();
     }
+
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
@@ -100,23 +99,23 @@ public class CSVUnlabeledFileReaderTest {
 
 
     @Test
-    void TestResultingTableSize() throws IOException {
+    void TestResultingTableSize() throws IOException, EmptyCSVDocumentException {
         CSV csv = new CSV();
-        secondaryTable = csv.readTable("src/files/miles_dollars.csv");
+        secondaryTable = csv.readTable("src"+ File.separator +"files"+ File.separator +"miles_dollars.csv");
         primaryTable = csvUnlabeled.readTableFromSource();
         assertEquals(secondaryTable.getSize(), primaryTable.getSize());
     }
     @Test
-    void TestReadTableFromSoure() throws IOException {
+    void TestReadTableFromSoure() throws IOException, EmptyCSVDocumentException {
         CSV csv = new CSV();
-        secondaryTable = csv.readTable("src/files/miles_dollars.csv");
+        secondaryTable = csv.readTable("src"+ File.separator +"files"+ File.separator +"miles_dollars.csv");
         primaryTable = csvUnlabeled.readTableFromSource();
         for (int i = 0; i <primaryTable.getSize(); i++) {
             assertEquals(primaryTable.getRowAt(i).getData(),secondaryTable.getRowAt(i).getData());
         }
     }
     @Test
-    void TestCLFRThrows(){
+    void TestCLFRThrows() throws EmptyCSVDocumentException {
 
         try{
             CSVUnlabeledFileReader auxiliaryCUFR = new CSVUnlabeledFileReader("DireccionSinNingunSentido");

@@ -16,13 +16,13 @@ public abstract class ReaderTemplate {
     protected abstract void closeSource();
     protected abstract boolean hasMoreData();
     protected abstract String getNextData();
-    public final Table readTableFromSource() throws IOException{
+    public final Table readTableFromSource() throws IOException, EmptyCSVDocumentException {
         openSource(documentoSource);
         if (hasMoreData()){
             processHeaders(getNextData());
         }
         else {
-            throw new RuntimeException();
+            throw new EmptyCSVDocumentException(documentoSource);
         }
         while (hasMoreData()){
             processData(getNextData());

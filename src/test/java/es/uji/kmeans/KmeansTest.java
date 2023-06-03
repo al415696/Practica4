@@ -9,6 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -18,17 +19,14 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 class KmeansTest {
     Kmeans kmeans;
     CSV csv = new CSV();
-    Table table;
+    Table table = csv.readTableWithLabels("src"+ File.separator +"files"+ File.separator +"iris.csv");
     ArrayList<Double> row1 = new ArrayList<>();
     ArrayList<Double> row2 = new ArrayList<>();
 
-    {
-        try {
-            table = csv.readTableWithLabels("src/files/iris.csv");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    KmeansTest() throws FileNotFoundException {
+        super();
     }
+
 
     @BeforeEach
     void setUp() {

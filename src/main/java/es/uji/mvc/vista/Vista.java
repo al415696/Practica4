@@ -62,7 +62,7 @@ public class Vista implements InterrogaVista,InformaVista {
         //num recomendaciones
         Label numRecomendLabel = new Label("Number of recomendations");
         numRecomendLabel.setFont(Font.font(13));
-        numRecomendSpinner = new Spinner<>(1,50,1);
+        numRecomendSpinner = new Spinner<>(1,9999,1);
         HBox hboxNumRecomend = new HBox(numRecomendLabel,numRecomendSpinner);
         hboxNumRecomend.setSpacing(10);
         hboxNumRecomend.setAlignment(Pos.CENTER_LEFT);
@@ -156,8 +156,12 @@ public class Vista implements InterrogaVista,InformaVista {
         mainStage.setScene(new Scene(root, 400, 500));
         mainStage.show();
     }
-    @Override
-    public void createGenericPopUp(String title, String body){
+
+    public void notifyError( String body){
+        createGenericPopUp("An error has occurred", body);
+    }
+
+    private void createGenericPopUp(String title, String body){
         Stage popUpStage = new Stage();
 
         Label titleLabel = new Label(title);
@@ -170,13 +174,12 @@ public class Vista implements InterrogaVista,InformaVista {
         popUpStage.setScene(popUpScene);
         popUpStage.show();
     }
-    @Override
-    public void createRecomendationPopUp(String songTitle, List<String> recomendations){
+    private void createRecomendationPopUp(String songTitle, List<String> recomendations){
         recomPopUpStage = new Stage();
 
         Label newNumRecomendLabel = new Label("Number of recomendations");
         newNumRecomendLabel.setFont(Font.font(13));
-        Spinner<Integer> newNumRecomendSpinner = new Spinner<>(1,50,1);
+        Spinner<Integer> newNumRecomendSpinner = new Spinner<>(1,9999,1);
         newNumRecomendSpinner.getValueFactory().setValue(numRecomendSpinner.getValue());
         newNumRecomendSpinner.setOnMouseClicked(e->{
             try {

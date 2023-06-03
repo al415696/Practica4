@@ -28,8 +28,6 @@ public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer>, D
                 throw new NotMatchingSizeException("knn");
 
             }
-
-
             RowWithLabel rowActual;
 
             int indiceMayorCercania = 0;
@@ -37,7 +35,7 @@ public class KNN implements Algorithm<TableWithLabels, List<Double>, Integer>, D
 
             double sumatorioLocal = 0;
 
-            sumatorioLocal = distance.calculateDistance(data, tabla.getRowAt(1).getData());
+            sumatorioLocal = distance.calculateDistance(data, tabla.getRowAt(0).getData());
             cercaniaMaxima = sumatorioLocal;
 
             for (int i = 1; i < tabla.getSize(); i++) {

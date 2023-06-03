@@ -3,29 +3,27 @@ package es.uji.row;
 import es.uji.csv.CSV;
 import es.uji.tables.TableWithLabels;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class RowTest {
-    String dirIris = "src/files/iris.csv";
+public class RowTest{
+    String dirIris = "src"+ File.separator +"files"+ File.separator +"iris.csv";
 
     CSV csv = new CSV();
-    TableWithLabels tIris;
+    TableWithLabels tIris = csv.readTableWithLabels(dirIris);
 
-    {
-        try {
-            tIris = csv.readTableWithLabels(dirIris);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     ArrayList<Double> fila;
 
+    public RowTest() throws FileNotFoundException {
+        super();
+    }
+
     @org.junit.jupiter.api.BeforeEach
-    void setUp() throws FileNotFoundException {
+    void setUp() {
         fila = new ArrayList<>();
     }
 
