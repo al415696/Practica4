@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CSVUnlabeledFileReaderTest {
 
@@ -115,15 +115,17 @@ public class CSVUnlabeledFileReaderTest {
         }
     }
     @Test
+
     void TestCLFRThrows() throws EmptyCSVDocumentException {
 
-        try{
+
+        Exception e = assertThrows(FileNotFoundException.class, () -> {
             CSVUnlabeledFileReader auxiliaryCUFR = new CSVUnlabeledFileReader("DireccionSinNingunSentido");
             auxiliaryCUFR.readTableFromSource();
-        }
-        catch (IOException e){
-            assertEquals(FileNotFoundException.class, e.getClass());
-        }
-
+        });
+        String expectedMessage = "DireccionSinNingunSentido (El sistema no puede encontrar el archivo especificado)";
+        String actualMessage = e.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
     }
+
 }

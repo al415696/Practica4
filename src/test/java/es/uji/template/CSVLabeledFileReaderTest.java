@@ -44,16 +44,17 @@ public class CSVLabeledFileReaderTest {
         assertEquals(3 , primaryTable.getNumOfLabels());
     }
     @Test
+
     void TestCLFRThrows() throws EmptyCSVDocumentException {
 
-        try{
+        Exception e = assertThrows(FileNotFoundException.class, () -> {
+
             CSVLabeledFileReader auxiliaryCLFR = new CSVLabeledFileReader("DireccionSinNingunSentido");
             auxiliaryCLFR.readTableFromSource();
-        }
-        catch (IOException e){
-            assertEquals(FileNotFoundException.class, e.getClass());
-        }
-
+        });
+        String expectedMessage = "DireccionSinNingunSentido (El sistema no puede encontrar el archivo especificado)";
+        String actualMessage = e.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
 }
