@@ -124,8 +124,8 @@ public class Vista implements InterrogaVista,InformaVista {
                         recomPopUpStage.close();
                     }
                     createRecomendationPopUp(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),
-                            modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue()));
-                    modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
+                            controlador.getListaRecomendacionesControlador(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue()));
+                    controlador.getListaRecomendacionesControlador(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
 
                 } catch (SongNotInDataBaseException ex) {
                     createGenericPopUp("SONG NOT FOUND", "An unexpected error has ocurred and the song you selected can't be found on the database." +
@@ -147,8 +147,8 @@ public class Vista implements InterrogaVista,InformaVista {
                         recomPopUpStage.close();
                     }
                     createRecomendationPopUp(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),
-                            modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue()));
-                    modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
+                            controlador.getListaRecomendacionesControlador(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue()));
+                    controlador.getListaRecomendacionesControlador(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),numRecomendSpinner.getValue());
                 } catch (SongNotInDataBaseException ex) {
                     createGenericPopUp("SONG NOT FOUND", "An unexpected error has ocurred and the song you selected can't be found on the database." +
                             "\nTry again with other song or contact your low quality applications provider");
