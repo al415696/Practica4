@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5c23e10-1348-4f39-876b-3c36b2adde65" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/CambioModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/CambioModelo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/InterrogaModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/InterrogaModelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/InformaVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/InformaVista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/Vista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +67,7 @@
       <recent name="es.uji.recomendacion" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CSVUnlabeledFileReaderTest.TestCLFRThrows">
+  <component name="RunManager" selected="JUnit.All in Practica4">
     <configuration name="All in Practica4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Practica4" />
       <option name="PACKAGE_NAME" value="" />
@@ -140,8 +139,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CSVUnlabeledFileReaderTest.TestCLFRThrows" />
         <item itemvalue="JUnit.All in Practica4" />
+        <item itemvalue="JUnit.CSVUnlabeledFileReaderTest.TestCLFRThrows" />
         <item itemvalue="JUnit.RecSysTest" />
         <item itemvalue="JUnit.RecSysTest.recommendsOfSameGroupKmeansMan" />
         <item itemvalue="JUnit.es.uji.recomendacion in Practica4" />

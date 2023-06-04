@@ -6,4 +6,5 @@ public interface CambioModelo {
     void selectAlgorithm(int indice);
     void selectDistance(int indice);
     List getListaRecomendaciones(String nameLikedItem, int numRecommendations) throws SongNotInDataBaseException;
+    List updateListaRecomendaciones(String nameLikedItem,int numRecommendations ) throws SongNotInDataBaseException;
 }

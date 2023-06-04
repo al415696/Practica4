@@ -64,10 +64,11 @@ public class Modelo implements InterrogaModelo,CambioModelo {
         recomendador = new RecSys(algorithm);
         try {
             recomendador.train(trainTable);
+
+        recomendador.run(dataTable, songNames);
         } catch (IncompatiblePositionFormatException e) {
             e.printStackTrace();
         }
-        recomendador.run(dataTable, songNames);
     }
     @Override
     public ArrayList<String> getListaCanciones(){

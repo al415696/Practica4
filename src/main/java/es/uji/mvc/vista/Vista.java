@@ -19,7 +19,7 @@ import java.util.List;
 public class Vista implements InterrogaVista,InformaVista {
     private final Stage mainStage;
     private Controller controlador;
-    InterrogaModelo modelo;
+    private InterrogaModelo modelo;
 
     private ToggleButton features;
     private ToggleButton genre;
@@ -188,7 +188,7 @@ public class Vista implements InterrogaVista,InformaVista {
         newNumRecomendSpinner.getValueFactory().setValue(numRecomendSpinner.getValue());
         newNumRecomendSpinner.setOnMouseClicked(e->{
             try {
-                ObservableList<String> songList = FXCollections.observableArrayList(modelo.updateListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),newNumRecomendSpinner.getValue()));
+                ObservableList<String> songList = FXCollections.observableArrayList(controlador.getListaRecomendacionesControlador(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),newNumRecomendSpinner.getValue()));
                 popUpList.setItems(songList);
             } catch (SongNotInDataBaseException ex) {
                 createGenericPopUp("UNEXPECTED ERROR", "An unexpected error has ocurred and the updated number of recomendations cannot be shown");
