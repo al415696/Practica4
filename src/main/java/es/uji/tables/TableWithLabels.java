@@ -18,14 +18,14 @@ public class TableWithLabels extends Table {
 
     public void addRow(ArrayList<Double> fila, String label) {
         RowWithLabel addedRow;
-        if (getIndexFromLabel(label) == null){
+        if (getIndexFromLabel(label) == null) {
             labelsToIndex.put(label, ++nextIndex);
-            addedRow = new RowWithLabel(fila,nextIndex);
-        }
-        else addedRow = new RowWithLabel(fila, getIndexFromLabel(label));
+            addedRow = new RowWithLabel(fila, nextIndex);
+        } else addedRow = new RowWithLabel(fila, getIndexFromLabel(label));
 
         super.addRow(addedRow);
     }
+
     @Override
     public RowWithLabel getRowAt(int pos) {
         return (RowWithLabel) super.getRowAt(pos);

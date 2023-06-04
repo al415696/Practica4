@@ -5,11 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5c23e10-1348-4f39-876b-3c36b2adde65" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/IncompatiblePositionFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/IncompatiblePositionFormatException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/NotMatchingSizeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/NotMatchingSizeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/kmeans/Kmeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/kmeans/Kmeans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/cluster/Cluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/kmeans/cluster/Cluster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/InterrogaModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/InterrogaModelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/recomendacion/RecSysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/recomendacion/RecSysTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/knn/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/algorithm/knn/KNN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/csv/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/csv/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/csv/CSVLabeledFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/csv/CSVLabeledFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/csv/CSVUnlabeledFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/csv/CSVUnlabeledFileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/csv/EmptyCSVDocumentException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/csv/EmptyCSVDocumentException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/csv/ReaderTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/csv/ReaderTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/estrategia/EuclideanDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/estrategia/EuclideanDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/estrategia/ManhattanDistance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/estrategia/ManhattanDistance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/Initializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/Initializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/controlador/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/CambioModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/CambioModelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/modelo/Modelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/InformaVista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/InformaVista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/mvc/vista/Vista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/recomendacion/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/recomendacion/RecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/recomendacion/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/recomendacion/SongRecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/tables/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/tables/TableWithLabels.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

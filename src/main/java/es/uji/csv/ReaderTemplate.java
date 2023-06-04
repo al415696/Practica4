@@ -7,24 +7,31 @@ import java.io.IOException;
 public abstract class ReaderTemplate {
     protected String documentoSource;
     protected Table tableActual;
-    public ReaderTemplate(String source){
+
+    public ReaderTemplate(String source) {
         documentoSource = source;
     }
+
     protected abstract void openSource(String source) throws IOException;
+
     protected abstract void processHeaders(String headers);
+
     protected abstract void processData(String data);
+
     protected abstract void closeSource();
+
     protected abstract boolean hasMoreData();
+
     protected abstract String getNextData();
+
     public final Table readTableFromSource() throws IOException, EmptyCSVDocumentException {
         openSource(documentoSource);
-        if (hasMoreData()){
+        if (hasMoreData()) {
             processHeaders(getNextData());
-        }
-        else {
+        } else {
             throw new EmptyCSVDocumentException(documentoSource);
         }
-        while (hasMoreData()){
+        while (hasMoreData()) {
             processData(getNextData());
         }
         closeSource();

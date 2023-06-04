@@ -2,22 +2,24 @@ package es.uji.mvc.modelo;
 
 import es.uji.algorithm.Algorithm;
 import es.uji.algorithm.IncompatiblePositionFormatException;
-import es.uji.algorithm.knn.KNN;
 import es.uji.algorithm.kmeans.Kmeans;
+import es.uji.algorithm.knn.KNN;
 import es.uji.csv.CSV;
 import es.uji.estrategia.Distance;
 import es.uji.estrategia.EuclideanDistance;
 import es.uji.estrategia.ManhattanDistance;
-import es.uji.recomendacion.SongNotInDataBaseException;
 import es.uji.mvc.vista.InformaVista;
 import es.uji.recomendacion.RecSys;
+import es.uji.recomendacion.SongNotInDataBaseException;
 import es.uji.tables.TableWithLabels;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public class Modelo implements InterrogaModelo,CambioModelo {
+public class Modelo implements InterrogaModelo, CambioModelo {
 
     private InformaVista vista;
 
@@ -27,11 +29,14 @@ public class Modelo implements InterrogaModelo,CambioModelo {
         Kmeans,
         KNN;
     }
+
     private algoritmoUsado algoritmoActual;
+
     private enum distanciaUsada {
         Manhattan,
         Euclidean;
     }
+
     private distanciaUsada distanciaActual;
 
     //Tablas internas:
@@ -39,7 +44,7 @@ public class Modelo implements InterrogaModelo,CambioModelo {
     private TableWithLabels dataTable;
     private ArrayList<String> songNames = new ArrayList<>();
 
-    private int numOfGenres=0;
+    private int numOfGenres = 0;
 
     public void setVista(InformaVista vista) {
         this.vista = vista;
@@ -49,10 +54,12 @@ public class Modelo implements InterrogaModelo,CambioModelo {
     public void initializeTrainTable(String trainDirection) throws FileNotFoundException {
         trainTable = new CSV().readTableWithLabels(trainDirection);
     }
+
     public void initializeDataTable(String dataDirection) throws FileNotFoundException {
         dataTable = new CSV().readTableWithLabels(dataDirection);
         numOfGenres = dataTable.getNumOfLabels();
     }
+
     public void initializeSongNames(String namesDirection) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(namesDirection));
         songNames = new ArrayList<>();
@@ -60,23 +67,24 @@ public class Modelo implements InterrogaModelo,CambioModelo {
         while (scanner.hasNextLine()) songNames.add(scanner.nextLine());
     }
 
-    private void train(Algorithm algorithm){
+    private void train(Algorithm algorithm) {
         recomendador = new RecSys(algorithm);
         try {
             recomendador.train(trainTable);
 
-        recomendador.run(dataTable, songNames);
+            recomendador.run(dataTable, songNames);
         } catch (IncompatiblePositionFormatException e) {
             e.printStackTrace();
         }
     }
+
     @Override
-    public ArrayList<String> getListaCanciones(){
+    public ArrayList<String> getListaCanciones() {
         return songNames;
     }
 
     @Override
-    public List getListaRecomendaciones(String nameLikedItem,int numRecommendations ) throws SongNotInDataBaseException {
+    public List getListaRecomendaciones(String nameLikedItem, int numRecommendations) throws SongNotInDataBaseException {
         Distance distance;
         switch (distanciaActual) {
             case Manhattan -> {
@@ -91,10 +99,10 @@ public class Modelo implements InterrogaModelo,CambioModelo {
             }
         }
 
-        Algorithm algorithm ;
-        switch (algoritmoActual){
+        Algorithm algorithm;
+        switch (algoritmoActual) {
             case Kmeans -> {
-                algorithm = new Kmeans(numOfGenres,10,7777777,distance);
+                algorithm = new Kmeans(numOfGenres, 10, 7777777, distance);
             }
             case KNN -> {
                 algorithm = new KNN(distance);
@@ -109,20 +117,22 @@ public class Modelo implements InterrogaModelo,CambioModelo {
 
         train(algorithm);
 
-       return recomendador.recommend(nameLikedItem,numRecommendations);
+        return recomendador.recommend(nameLikedItem, numRecommendations);
     }
+
     @Override
-    public List updateListaRecomendaciones(String nameLikedItem,int numRecommendations ) throws SongNotInDataBaseException{
-        return recomendador.recommend(nameLikedItem,numRecommendations);
+    public List updateListaRecomendaciones(String nameLikedItem, int numRecommendations) throws SongNotInDataBaseException {
+        return recomendador.recommend(nameLikedItem, numRecommendations);
     }
+
     @Override
     public void selectAlgorithm(int indice) {
-        algoritmoActual =  algoritmoUsado.values()[indice];
+        algoritmoActual = algoritmoUsado.values()[indice];
     }
 
     @Override
     public void selectDistance(int indice) {
-        distanciaActual =  distanciaUsada.values()[indice];
+        distanciaActual = distanciaUsada.values()[indice];
     }
 
 }

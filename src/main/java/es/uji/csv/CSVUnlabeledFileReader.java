@@ -12,12 +12,13 @@ import java.util.Scanner;
 public class CSVUnlabeledFileReader extends ReaderTemplate {
     protected Scanner documento;
 
-    public CSVUnlabeledFileReader(String source){
+    public CSVUnlabeledFileReader(String source) {
         super(source);
         tableActual = new Table();
     }
+
     @Override
-    protected void openSource(String source) throws FileNotFoundException{
+    protected void openSource(String source) throws FileNotFoundException {
         documento = new Scanner(new File(source));
     }
 

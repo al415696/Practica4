@@ -21,37 +21,35 @@ public class RecSys<D, R> {
     }
 
     public void run(Table testData, List<String> testItemNames) {
-    try {
-        for (int i = 1; i < testData.getSize(); i++) {
-            grupoTestData.add((Integer) algorithm.estimate(testData.getRowAt(i).getData()));
+        try {
+            for (int i = 1; i < testData.getSize(); i++) {
+                grupoTestData.add((Integer) algorithm.estimate(testData.getRowAt(i).getData()));
+            }
+            ArrayList<String> respuesta = new ArrayList<>();
+            respuesta.addAll(testItemNames);
+            this.testItemNames = respuesta;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        ArrayList<String> respuesta = new ArrayList<>();
-        respuesta.addAll(testItemNames);
-        this.testItemNames = respuesta;
-    }
-    catch(Exception e){
-        e.printStackTrace();
-    }
     }
 
 
     public List<String> recommend(String nameLikedItem, int numRecommendations) throws SongNotInDataBaseException {
-        try{
-        int indexName = findName(nameLikedItem);
-        int grupo = grupoTestData.get(indexName);
-        return recomendOfSameGroup(grupo, nameLikedItem, numRecommendations);
-    }
-        catch ( SongNotInDataBaseException e){
+        try {
+            int indexName = findName(nameLikedItem);
+            int grupo = grupoTestData.get(indexName);
+            return recomendOfSameGroup(grupo, nameLikedItem, numRecommendations);
+        } catch (SongNotInDataBaseException e) {
             e.printStackTrace();
             return new ArrayList<String>();
         }
     }
 
-    private Integer findName(String nameOfItem) throws SongNotInDataBaseException{
+    private Integer findName(String nameOfItem) throws SongNotInDataBaseException {
 
         int i = 0;
-        while(i < testItemNames.size()) {
-            if(testItemNames.get(i).equals(nameOfItem)) {
+        while (i < testItemNames.size()) {
+            if (testItemNames.get(i).equals(nameOfItem)) {
                 return i;
             }
             i++;

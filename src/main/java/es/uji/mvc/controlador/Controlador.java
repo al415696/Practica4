@@ -3,6 +3,7 @@ package es.uji.mvc.controlador;
 import es.uji.mvc.modelo.CambioModelo;
 import es.uji.mvc.vista.InterrogaVista;
 import es.uji.recomendacion.SongNotInDataBaseException;
+
 import java.util.List;
 
 
@@ -19,16 +20,17 @@ public class Controlador implements Controller {
         this.vista = vista;
 
     }
+
     public List getListaRecomendacionesControlador(String nameLikedItem, int numRecommendations) throws SongNotInDataBaseException {
-        if (unalteredRecomendator){
-            return modelo.updateListaRecomendaciones(nameLikedItem,numRecommendations);
-        }
-        else{
+        if (unalteredRecomendator) {
+            return modelo.updateListaRecomendaciones(nameLikedItem, numRecommendations);
+        } else {
             unalteredRecomendator = true;
-            return modelo.getListaRecomendaciones(nameLikedItem,numRecommendations);
+            return modelo.getListaRecomendaciones(nameLikedItem, numRecommendations);
         }
 
     }
+
     @Override
     public void selectAlgorithm(int indice) {
         unalteredRecomendator = false;

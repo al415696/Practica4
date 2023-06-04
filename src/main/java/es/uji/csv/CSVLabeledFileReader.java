@@ -5,13 +5,14 @@ import es.uji.tables.TableWithLabels;
 
 import java.util.ArrayList;
 
-public class CSVLabeledFileReader extends CSVUnlabeledFileReader{
+public class CSVLabeledFileReader extends CSVUnlabeledFileReader {
 
 
-    public CSVLabeledFileReader(String source){
+    public CSVLabeledFileReader(String source) {
         super(source);
         tableActual = new TableWithLabels();
     }
+
     @Override
     protected void processData(String data) {
 
@@ -23,6 +24,6 @@ public class CSVLabeledFileReader extends CSVUnlabeledFileReader{
             listDatos.add(Double.parseDouble(datos[i]));
         }
 
-        ((TableWithLabels)tableActual).addRow(listDatos,datos[datos.length-1]);
+        ((TableWithLabels) tableActual).addRow(listDatos, datos[datos.length - 1]);
     }
 }

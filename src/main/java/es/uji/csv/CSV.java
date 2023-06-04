@@ -20,7 +20,7 @@ public class CSV {
 
         Scanner entrada = new Scanner(new File(direc));
 
-        checkForHeader(entrada, datosHeader,nuevaTabla);
+        checkForHeader(entrada, datosHeader, nuevaTabla);
 
         nuevaTabla.addHeader(datosHeader);
 
@@ -40,7 +40,7 @@ public class CSV {
         TableWithLabels nuevaTabla = new TableWithLabels();
         ArrayList<String> datosHeader = new ArrayList<>();
         Scanner entrada = new Scanner(new File(direc));
-        checkForHeader(entrada, datosHeader,nuevaTabla);
+        checkForHeader(entrada, datosHeader, nuevaTabla);
         int nextRowIndex;
         while (entrada.hasNextLine()) {
             ArrayList<Double> datosLinea = new ArrayList<>();
@@ -59,7 +59,7 @@ public class CSV {
         return nuevaTabla;
     }
 
-    private void checkForHeader(Scanner entrada, ArrayList<String> datosHeader, Table nuevaTabla){
+    private void checkForHeader(Scanner entrada, ArrayList<String> datosHeader, Table nuevaTabla) {
         if (entrada.hasNextLine()) {
             String[] datos = entrada.nextLine().split(",");
             Collections.addAll(datosHeader, datos);

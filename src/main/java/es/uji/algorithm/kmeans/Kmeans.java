@@ -1,10 +1,10 @@
 package es.uji.algorithm.kmeans;
 
 import es.uji.algorithm.Algorithm;
+import es.uji.algorithm.IncompatiblePositionFormatException;
 import es.uji.algorithm.kmeans.cluster.Cluster;
 import es.uji.estrategia.Distance;
 import es.uji.estrategia.DistanceClient;
-import es.uji.algorithm.IncompatiblePositionFormatException;
 import es.uji.tables.Row;
 import es.uji.tables.Table;
 
@@ -59,7 +59,7 @@ public class Kmeans implements Algorithm<Table, List<Double>, Integer>, Distance
             for (int i = 0; i < datos.getSize(); i++) {
                 //Empieza calculado la distancia al centro del primer cluster y asumiendo que es el más cercano
                 indiceMayorCercania = 0;
-                sumatorioLocal = distance.calculateDistance(datos.getRowAt(i).getData(),representantes.get(0).getCentroide().getData());
+                sumatorioLocal = distance.calculateDistance(datos.getRowAt(i).getData(), representantes.get(0).getCentroide().getData());
                 cercaniaMaxima = sumatorioLocal;
 
                 //Mira la distancia para los demás representantes
@@ -83,7 +83,8 @@ public class Kmeans implements Algorithm<Table, List<Double>, Integer>, Distance
         grupos = representantes;
 
     }
-    private void clearAllGroups(List<Cluster> representantes){
+
+    private void clearAllGroups(List<Cluster> representantes) {
         for (int i = 0; i < numClusters; i++) {
             representantes.get(i).ClearGroup();
         }
@@ -126,8 +127,7 @@ public class Kmeans implements Algorithm<Table, List<Double>, Integer>, Distance
 
             }
             return indiceMayorCercania;
-        }
-        catch (IncompatiblePositionFormatException e){
+        } catch (IncompatiblePositionFormatException e) {
             e.printStackTrace();
             return -1;
         }
