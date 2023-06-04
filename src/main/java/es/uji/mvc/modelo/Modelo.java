@@ -111,6 +111,10 @@ public class Modelo implements InterrogaModelo,CambioModelo {
        return recomendador.recommend(nameLikedItem,numRecommendations);
     }
     @Override
+    public List updateListaRecomendaciones(String nameLikedItem,int numRecommendations ) throws SongNotInDataBaseException{
+        return recomendador.recommend(nameLikedItem,numRecommendations);
+    }
+    @Override
     public void selectAlgorithm(int indice) {
         algoritmoActual =  algoritmoUsado.values()[indice];
     }

@@ -34,7 +34,6 @@ public class Vista implements InterrogaVista,InformaVista {
 
     private Button recomend;
 
-    private StringBuilder body;
     Stage recomPopUpStage;
 
     public static void main(String[] args) {
@@ -189,7 +188,7 @@ public class Vista implements InterrogaVista,InformaVista {
         newNumRecomendSpinner.getValueFactory().setValue(numRecomendSpinner.getValue());
         newNumRecomendSpinner.setOnMouseClicked(e->{
             try {
-                ObservableList<String> songList = FXCollections.observableArrayList(modelo.getListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),newNumRecomendSpinner.getValue()));
+                ObservableList<String> songList = FXCollections.observableArrayList(modelo.updateListaRecomendaciones(modelo.getListaCanciones().get(lista.getSelectionModel().getSelectedIndex()),newNumRecomendSpinner.getValue()));
                 popUpList.setItems(songList);
             } catch (SongNotInDataBaseException ex) {
                 createGenericPopUp("UNEXPECTED ERROR", "An unexpected error has ocurred and the updated number of recomendations cannot be shown");
