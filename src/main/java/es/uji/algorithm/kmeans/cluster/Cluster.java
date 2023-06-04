@@ -1,4 +1,4 @@
-package es.uji.cluster;
+package es.uji.algorithm.kmeans.cluster;
 
 import es.uji.tables.Row;
 

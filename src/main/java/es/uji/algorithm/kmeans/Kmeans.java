@@ -1,7 +1,7 @@
 package es.uji.algorithm.kmeans;
 
 import es.uji.algorithm.Algorithm;
-import es.uji.cluster.Cluster;
+import es.uji.algorithm.kmeans.cluster.Cluster;
 import es.uji.estrategia.Distance;
 import es.uji.estrategia.DistanceClient;
 import es.uji.algorithm.IncompatiblePositionFormatException;

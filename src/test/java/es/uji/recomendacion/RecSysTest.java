@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,17 +56,6 @@ class RecSysTest {
         assertEquals(10, recSysKmeansManhattan.recommend("Tonight",10).size());
     }
 
-//    @Test
-//
-//    void recommendsOfSameGroupKmeansMan() throws SongNotInDataBaseException {
-//        List recomendaciones = recSysKmeansManhattan.recommend("Headbangers:Dubstep/Riddim",4);
-//
-//        for (int i = 0; i < recomendaciones.size(); i++) {
-//            assertEquals(true, recSysKmeansManhattan.getSongGroup((String) recomendaciones.get(i)) == recSysKmeansManhattan.getSongGroup("Headbangers:Dubstep/Riddim"));
-//        }
-//
-//    }
-
     @Test
     void numRecommendations900KmeansMan() throws SongNotInDataBaseException {
         assertNotEquals(900, recSysKmeansManhattan.recommend("Tonight", 900).size());
@@ -88,40 +76,6 @@ class RecSysTest {
         assertEquals(10, recSysKmeansEuclidean.recommend("Tonight",10).size());
     }
 
-//    @Test
-//
-//    void recommendsOfSameGroupKMeansMEuc() throws SongNotInDataBaseException {
-//        List recomendaciones = recSysKmeansEuclidean.recommend("Headbangers:Dubstep/Riddim",5);
-//        System.out.println("\nHeadbangers:Dubstep/Riddim " + recSysKmeansEuclidean.getSongGroup("Headbangers:Dubstep/Riddim"));
-//        for (int i = 0; i < recomendaciones.size(); i++) {
-//            System.out.println(  recSysKmeansEuclidean.getSongGroup((String) recomendaciones.get(i))+ " " +  (String) recomendaciones.get(i));
-//            assertEquals(true, recSysKmeansEuclidean.getSongGroup((String) recomendaciones.get(i)) == recSysKmeansEuclidean.getSongGroup("Headbangers:Dubstep/Riddim"));
-//        }
-//
-//    }
-//    @Test
-//
-//    void recommendsOfSameGroupKNNMan() throws SongNotInDataBaseException {
-//        List recomendaciones = recSysKNNManhattan.recommend("Headbangers:Dubstep/Riddim",4);
-//
-//        for (int i = 0; i < recomendaciones.size(); i++) {
-//            assertEquals(true, recSysKNNManhattan.getSongGroup((String) recomendaciones.get(i)) == recSysKNNManhattan.getSongGroup("Headbangers:Dubstep/Riddim"));
-//        }
-//
-//    }
-//    @Test
-//
-//    void recommendsOfSameGroupKNNEuc() throws SongNotInDataBaseException {
-//        List recomendaciones = recSysKNNEuclidean.recommend("Headbangers:Dubstep/Riddim",5);
-//        System.out.println("Headbangers:Dubstep/Riddim " + recSysKNNEuclidean.getSongGroup("Headbangers:Dubstep/Riddim"));
-//
-//        for (int i = 0; i < recomendaciones.size(); i++) {
-//            System.out.println(recSysKNNEuclidean.getSongGroup((String) recomendaciones.get(i)));
-//            assertEquals(true, recSysKNNEuclidean.getSongGroup((String) recomendaciones.get(i)) == recSysKNNEuclidean.getSongGroup("Headbangers:Dubstep/Riddim"));
-//        }
-//
-//    }
-
     @Test
     void numRecommendations900KMeansEuc() throws SongNotInDataBaseException {
         assertNotEquals(900, recSysKmeansEuclidean.recommend("Tonight", 900).size());
@@ -134,19 +88,8 @@ class RecSysTest {
         assertEquals(10, recSysKNNEuclidean.recommend("Tonight",10).size());
     }
 
-
-
     @Test
     void numRecommendations900KNNEuc() throws SongNotInDataBaseException {
         assertNotEquals(900, recSysKNNEuclidean.recommend("Tonight", 900).size());
     }
-    /*
-    @Test
-    void SongNotInDatabase(){
-        recSysKmeans.run(tableTest, names);
-        Exception exep = assertThrows(SongNotInDataBaseException.class, () -> recSysKmeans.recommend("Top 10 Sea Shanties of all time", 10));
-        assertEquals(SongNotInDataBaseException.class, exep.getClass());
-    }
-
-     */
 }
